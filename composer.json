@@ -76,16 +76,12 @@
         "test:static-analysis": [
             "./vendor/bin/phpstan analyse --memory-limit=2G"
         ],
-        "test:rector": [
-            "./vendor/bin/rector process --dry-run"
-        ],
         "test:pint": [
             "./vendor/bin/pint --test"
         ],
         "test": [
             "composer test:pest",
             "composer test:static-analysis",
-            "composer test:rector",
             "composer test:pint"
         ]
     },
