@@ -11,6 +11,7 @@ return RectorConfig::configure()
         __DIR__.'/app',
         __DIR__.'/tests',
     ])
+    ->withImportNames()
     ->withSkip([
         AddOverrideAttributeToOverriddenMethodsRector::class,
     ])
