@@ -29,13 +29,13 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '22'
-          cache: 'npm'
+          cache: 'pnpm'
 
       - name: Install Node Dependencies
-        run: npm ci
+        run: pnpm ci
 
       - name: Build Assets
-        run: npm run build
+        run: pnpm run build
 
       - name: Create SQLite Database
         run: touch database/database.sqlite
@@ -50,4 +50,4 @@ jobs:
         run: php artisan key:generate
 
       - name: Tests
-        run: ./vendor/bin/phpunit
+        run: composer test
