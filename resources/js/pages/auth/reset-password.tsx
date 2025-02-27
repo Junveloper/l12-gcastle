@@ -8,18 +8,20 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import AuthLayout from '@/layouts/auth-layout';
 
-interface ResetPasswordProps {
+type ResetPasswordProps = {
     token: string;
     email: string;
-}
+};
 
-interface ResetPasswordForm {
+// Define the form data structure without extending InertiaForm
+type ResetPasswordForm = {
     token: string;
     email: string;
     password: string;
     password_confirmation: string;
-}
+};
 
+// Use the form data type with useForm
 export default function ResetPassword({ token, email }: ResetPasswordProps) {
     const { data, setData, post, processing, errors, reset } = useForm<ResetPasswordForm>({
         token: token,
