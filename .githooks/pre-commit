@@ -45,4 +45,6 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
+git diff --name-only --cached
+
 echo "All checks passed! Proceeding with commit."
