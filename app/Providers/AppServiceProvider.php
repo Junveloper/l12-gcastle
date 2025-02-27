@@ -5,10 +5,12 @@ declare(strict_types=1);
 namespace App\Providers;
 
 use Carbon\CarbonImmutable;
+use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Date;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Str;
 use Illuminate\Validation\Rules\Password;
 
 class AppServiceProvider extends ServiceProvider
@@ -30,6 +32,7 @@ class AppServiceProvider extends ServiceProvider
         $this->configureDates();
         $this->configureModels();
         $this->configurePasswordValidation();
+        $this->configureFactory();
     }
 
     private function configureCommands(): void
@@ -53,5 +56,16 @@ class AppServiceProvider extends ServiceProvider
     private function configurePasswordValidation(): void
     {
         Password::defaults(fn () => $this->app->isProduction() ? Password::min(8)->uncompromised() : null);
+    }
+
+    private function configureFactory(): void
+    {
+        Factory::guessFactoryNamesUsing(function (string $modelName): string {
+            $namespace = 'Database\\Factories\\';
+
+            $modelName = Str::afterLast($modelName, '\\');
+
+            return $namespace.$modelName.'Factory';
+        });
     }
 }
