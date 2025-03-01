@@ -46,63 +46,75 @@
                 MEMBER PRICING</div>
 
             <!-- PRICING LIST -->
-            <ol class="mt-4 space-y-0.5">
-                <li class="grid grid-cols-2 items-center">
-                    <div class="text-3xl text-right pr-8">1 hour</div>
-                    <div class="text-5xl jersey-15-regular gcastle-text-shadow font-extrabold tracking-wider">$5</div>
-                </li>
-
-                <li class="grid grid-cols-2 items-center">
-                    <div class="text-3xl text-right pr-8">3 hours</div>
-                    <div class="text-5xl jersey-15-regular gcastle-text-shadow font-extrabold tracking-wider">$10</div>
-                </li>
-
-                <li class="grid grid-cols-2 items-center">
-                    <div class="text-3xl text-right pr-8">7 hours</div>
-                    <div class="text-5xl jersey-15-regular gcastle-text-shadow font-extrabold tracking-wider">$20</div>
-                </li>
-
-                <li class="grid grid-cols-2 items-center">
-                    <div class="text-3xl text-right pr-8">11 hours</div>
-                    <div class="text-5xl jersey-15-regular gcastle-text-shadow font-extrabold tracking-wider">$30</div>
-                </li>
-
-                <li class="grid grid-cols-2 items-center">
-                    <div class="text-3xl text-right pr-8">20 hours</div>
-                    <div class="text-5xl jersey-15-regular gcastle-text-shadow font-extrabold tracking-wider">$50</div>
-                </li>
-
-                <li class="grid grid-cols-2 items-center">
-                    <div class="text-3xl text-right pr-8">45 hours</div>
-                    <div class="text-5xl jersey-15-regular gcastle-text-shadow font-extrabold tracking-wider">$100</div>
-                </li>
-                <ol>
-
-                    <!-- Pricing Structure Infoo -->
-                    <div class="flex flex-col items-center justify-center">
-                        <div class="mt-4 sm:text-lg text-sm text-center">
-                            Purchasing 3 hours with a Photo ID will get you a Membership Account
-                        </div>
-
-                        <div class="font-bold sm:text-2xl mt-4 text-center">
-                            Any unused time remains on your account for 365 days
-                        </div>
-                    </div>
-
-                    <!-- Non-member pricing -->
-                    <div class="flex flex-col items-center justify-center mt-6">
-                        <div class="text-2xl">NON-MEMBER PRICING</div>
-                        <div class="text-3xl font-bold mt-1">$5 an hour</div>
-                    </div>
-
-                    <!-- Night Special -->
+            <ol class="mt-4 flex w-full flex-col items-center justify-center space-y-0.5">
+                <li class="grid w-2/5 grid-cols-2 items-center">
+                    <div class="text-right text-3xl">1 hour</div>
                     <div
-                        class="flex flex-col justify-center items-center border-4 max-w-4/5 mx-auto mt-8 py-3 text-center gcastle-box-shadow w-3/4">
-                        <div class="text-2xl">MEMBER NIGHT SPECIAL</div>
-                        <div class="text-3xl my-3">$17 for 9 hours</div>
-                        <div class="text-sm mt-2">Only available between 10am - 2am</div>
-                        <div class="text-sm font-bold mt-1">Unused time will be lost</div>
-                    </div>
+                        class="jersey-15-regular gcastle-text-shadow ml-8 text-left text-5xl font-extrabold tracking-wider">
+                        $5</div>
+                </li>
+
+                <li class="grid w-2/5 grid-cols-2 items-center">
+                    <div class="text-right text-3xl">2.5 hours</div>
+                    <div
+                        class="jersey-15-regular gcastle-text-shadow ml-8 text-left text-5xl font-extrabold tracking-wider">
+                        $10</div>
+                </li>
+
+                <li class="grid w-2/5 grid-cols-2 items-center">
+                    <div class="text-right text-3xl">6 hours</div>
+                    <div
+                        class="jersey-15-regular gcastle-text-shadow ml-8 text-left text-5xl font-extrabold tracking-wider">
+                        $20</div>
+                </li>
+
+                <li class="grid w-2/5 grid-cols-2 items-center">
+                    <div class="text-right text-3xl">9.5 hours</div>
+                    <div
+                        class="jersey-15-regular gcastle-text-shadow ml-8 text-left text-5xl font-extrabold tracking-wider">
+                        $30</div>
+                </li>
+
+                <li class="grid w-2/5 grid-cols-2 items-center">
+                    <div class="text-right text-3xl">16.5 hours</div>
+                    <div
+                        class="jersey-15-regular gcastle-text-shadow ml-8 text-left text-5xl font-extrabold tracking-wider">
+                        $50</div>
+                </li>
+
+                <li class="grid w-2/5 grid-cols-2 items-center">
+                    <div class="text-right text-3xl">40 hours</div>
+                    <div
+                        class="jersey-15-regular gcastle-text-shadow ml-8 text-left text-5xl font-extrabold tracking-wider">
+                        $100</div>
+                </li>
+            </ol>
+
+            <!-- Pricing Structure Infoo -->
+            <div class="flex flex-col items-center justify-center">
+                <div class="mt-4 sm:text-lg text-sm text-center">
+                    Purchasing 3 hours with a Photo ID will get you a Membership Account
+                </div>
+
+                <div class="font-bold sm:text-2xl mt-4 text-center">
+                    Any unused time remains on your account for 365 days
+                </div>
+            </div>
+
+            <!-- Non-member pricing -->
+            <div class="flex flex-col items-center justify-center mt-6">
+                <div class="text-2xl">NON-MEMBER PRICING</div>
+                <div class="text-3xl font-bold mt-1">$5 an hour</div>
+            </div>
+
+            <!-- Night Special -->
+            <div
+                class="flex flex-col justify-center items-center border-4 max-w-4/5 mx-auto mt-8 py-3 text-center gcastle-box-shadow w-3/4">
+                <div class="text-2xl">MEMBER NIGHT SPECIAL</div>
+                <div class="text-3xl my-3">$20 for 9 hours</div>
+                <div class="text-sm mt-2">Only available between 10am - 2am</div>
+                <div class="text-sm font-bold mt-1">Unused time will be lost</div>
+            </div>
         </div>
     </div>
 </body>
