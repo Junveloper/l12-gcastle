@@ -37,43 +37,43 @@
                         d="M161.8 77.04V113.04H154.6V77.04H161.8ZM98.2 60.24V65.04H103V60.24H107.8V65.04H103.237V77.04H100.6V80.64H104.2V77.04H111.4V113.04H104.2V110.64H99.4V110.639L91 110.64V107.039L87.4 107.04L87.399 103.44H83.8V87.84H87.4V84.24H91V80.64H95.8V77.04H92.2V69.84H95.8V65.04H93.4V60.24H98.2ZM163 60.24V65.04H167.8V60.24H172.6V65.04H170.2L170.199 69.84H173.8V77.04H170.2V80.64H175L174.999 84.24H178.6V87.84H182.2V103.44H178.6V107.04L174.999 107.039L175 110.64L166.6 110.639V110.64H161.8V80.64H165.4V77.04H162.763V65.04H158.2V60.24H163ZM99.4 85.439H92.2V91.44H88.6V99.839H95.8V95.04H99.4V85.439ZM173.8 85.439H166.6V95.04H170.2V99.839H177.4V91.44H173.8V85.439ZM103 55.44V60.24H98.2V55.44H103ZM167.8 55.44V60.24H163V55.44H167.8ZM158.2 55.44V60.24H153.4V55.44H158.2ZM112.6 60.24H107.8V55.44H112.6V50.64H117.4V53.04H148.6V50.64H153.4V55.44H148.6V57.84H117.4V55.44H112.6V60.24ZM163 50.64V55.44H158.2V50.64H163ZM107.8 50.64V55.44H103V50.64H107.8ZM112.6 50.64H107.8V45.84H112.6V42.24H153.4V45.84H158.2V50.64H153.4V47.04H112.6V50.64Z"
                         fill="white" />
                 </svg>
-                <div class="jersey-15-regular gcastle-text-shadow mt-2 text-5xl font-extrabold tracking-wider">G CASTLE
+                <div class="jersey-15-regular gcastle-text-shadow mt-2 text-6xl font-extrabold tracking-wider">G CASTLE
                 </div>
             </div>
 
             <!-- MEMBER PRICING -->
-            <div class="jersey-15-regular gcastle-text-shadow text-center text-5xl font-extrabold tracking-wider mt-4">
+            <div class="jersey-15-regular gcastle-text-shadow text-center text-6xl font-extrabold tracking-wider mt-4">
                 MEMBER PRICING</div>
 
             <!-- PRICING LIST -->
             <ol class="mt-4 space-y-0.5">
                 <li class="grid grid-cols-2 items-center">
-                    <div class="text-2xl font-extralight text-right pr-8">1 hour</div>
+                    <div class="text-3xl text-right pr-8">1 hour</div>
                     <div class="text-5xl jersey-15-regular gcastle-text-shadow font-extrabold tracking-wider">$5</div>
                 </li>
 
                 <li class="grid grid-cols-2 items-center">
-                    <div class="text-2xl font-extralight text-right pr-8">3 hours</div>
+                    <div class="text-3xl text-right pr-8">3 hours</div>
                     <div class="text-5xl jersey-15-regular gcastle-text-shadow font-extrabold tracking-wider">$10</div>
                 </li>
 
                 <li class="grid grid-cols-2 items-center">
-                    <div class="text-2xl font-extralight text-right pr-8">7 hours</div>
+                    <div class="text-3xl text-right pr-8">7 hours</div>
                     <div class="text-5xl jersey-15-regular gcastle-text-shadow font-extrabold tracking-wider">$20</div>
                 </li>
 
                 <li class="grid grid-cols-2 items-center">
-                    <div class="text-2xl font-extralight text-right pr-8">11 hours</div>
+                    <div class="text-3xl text-right pr-8">11 hours</div>
                     <div class="text-5xl jersey-15-regular gcastle-text-shadow font-extrabold tracking-wider">$30</div>
                 </li>
 
                 <li class="grid grid-cols-2 items-center">
-                    <div class="text-2xl font-extralight text-right pr-8">20 hours</div>
+                    <div class="text-3xl text-right pr-8">20 hours</div>
                     <div class="text-5xl jersey-15-regular gcastle-text-shadow font-extrabold tracking-wider">$50</div>
                 </li>
 
                 <li class="grid grid-cols-2 items-center">
-                    <div class="text-2xl font-extralight text-right pr-8">45 hours</div>
+                    <div class="text-3xl text-right pr-8">45 hours</div>
                     <div class="text-5xl jersey-15-regular gcastle-text-shadow font-extrabold tracking-wider">$100</div>
                 </li>
                 <ol>
@@ -101,7 +101,7 @@
                         <div class="text-2xl">MEMBER NIGHT SPECIAL</div>
                         <div class="text-3xl my-3">$17 for 9 hours</div>
                         <div class="text-sm mt-2">Only available between 10am - 2am</div>
-                        <div class="text-sm font-bold mt-1">Remaining time will be lost</div>
+                        <div class="text-sm font-bold mt-1">Unused time will be lost</div>
                     </div>
         </div>
     </div>
