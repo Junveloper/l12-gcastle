@@ -18,7 +18,6 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  * @property int $platform_id
  * @property string $name
  * @property bool $is_free
- * @property string|null $archived_at
  * @property CarbonImmutable|null $created_at
  * @property CarbonImmutable|null $updated_at
  * @property-read Platform $platform
@@ -27,7 +26,6 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  * @method static Builder<static>|Game newModelQuery()
  * @method static Builder<static>|Game newQuery()
  * @method static Builder<static>|Game query()
- * @method static Builder<static>|Game whereArchivedAt($value)
  * @method static Builder<static>|Game whereCreatedAt($value)
  * @method static Builder<static>|Game whereId($value)
  * @method static Builder<static>|Game whereIsFree($value)

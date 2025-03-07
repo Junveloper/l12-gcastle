@@ -18,7 +18,6 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  * @property string $uuid
  * @property string $name
  * @property int $display_order
- * @property string|null $archived_at
  * @property CarbonImmutable|null $created_at
  * @property CarbonImmutable|null $updated_at
  * @property-read Collection<int, Game> $games
@@ -27,7 +26,6 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  * @method static Builder<static>|Platform newModelQuery()
  * @method static Builder<static>|Platform newQuery()
  * @method static Builder<static>|Platform query()
- * @method static Builder<static>|Platform whereArchivedAt($value)
  * @method static Builder<static>|Platform whereCreatedAt($value)
  * @method static Builder<static>|Platform whereDisplayOrder($value)
  * @method static Builder<static>|Platform whereId($value)
