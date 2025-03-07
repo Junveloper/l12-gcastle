@@ -18,7 +18,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  * @property int $platform_id
  * @property string $name
  * @property bool $is_free
- * @property CarbonImmutable|null $archived_at
+ * @property string|null $archived_at
  * @property CarbonImmutable|null $created_at
  * @property CarbonImmutable|null $updated_at
  * @property-read Platform $platform
@@ -42,13 +42,6 @@ class Game extends Model
 {
     use HasFactory;
     use HasUuid;
-
-    protected function casts(): array
-    {
-        return [
-            'archived_at' => CarbonImmutable::class,
-        ];
-    }
 
     public function platform(): BelongsTo
     {

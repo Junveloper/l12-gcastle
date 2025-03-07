@@ -18,6 +18,8 @@ use Filament\Tables\Actions\DeleteBulkAction;
 use Filament\Tables\Actions\EditAction;
 use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Filters\SelectFilter;
+use Filament\Tables\Filters\TernaryFilter;
 use Filament\Tables\Table;
 
 class GameResource extends Resource
@@ -31,15 +33,19 @@ class GameResource extends Resource
         return $form
             ->schema([
                 TextInput::make('name')
-                    ->required()
                     ->columnSpanFull()
-                    ->maxLength(255),
+                    ->maxLength(255)
+                    ->required(),
                 Select::make('platform_id')
                     ->columnSpanFull()
                     ->relationship('platform', 'name')
                     ->required(),
                 Toggle::make('is_free')
-                    ->columnSpanFull()
+                    ->label('Free to Play')
+                    ->required(),
+                Toggle::make('archived_at')
+                    ->label('Archived')
+                    ->mutateDehydratedStateUsing(fn (bool $state) => $state ? now() : null)
                     ->required(),
             ]);
     }
@@ -47,6 +53,7 @@ class GameResource extends Resource
     public static function table(Table $table): Table
     {
         return $table
+            ->defaultPaginationPageOption(50)
             ->columns([
                 TextColumn::make('name')
                     ->sortable()
@@ -56,10 +63,21 @@ class GameResource extends Resource
                     ->searchable(),
                 IconColumn::make('is_free')
                     ->boolean()
+                    ->label('Free to Play')
                     ->sortable(),
             ])
             ->filters([
-                //
+                SelectFilter::make('platform_id')
+                    ->label('Platform')
+                    ->placeholder('All')
+                    ->relationship('platform', 'name'),
+                TernaryFilter::make('is_free')
+                    ->label('Free to Play')
+                    ->placeholder('All')
+                    ->options([
+                        'true' => 'Yes',
+                        'false' => 'No',
+                    ]),
             ])
             ->actions([
                 EditAction::make(),

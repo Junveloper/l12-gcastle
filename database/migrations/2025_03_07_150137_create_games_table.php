@@ -14,7 +14,6 @@ return new class extends Migration
             $table->foreignId('platform_id')->constrained('platforms');
             $table->string('name');
             $table->boolean('is_free');
-            $table->timestamp('archived_at')->nullable();
             $table->timestamps();
         });
     }

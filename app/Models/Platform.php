@@ -18,7 +18,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  * @property string $uuid
  * @property string $name
  * @property int $display_order
- * @property CarbonImmutable|null $archived_at
+ * @property string|null $archived_at
  * @property CarbonImmutable|null $created_at
  * @property CarbonImmutable|null $updated_at
  * @property-read Collection<int, Game> $games
@@ -41,13 +41,6 @@ class Platform extends Model
 {
     use HasFactory;
     use HasUuid;
-
-    protected function casts(): array
-    {
-        return [
-            'archived_at' => CarbonImmutable::class,
-        ];
-    }
 
     public function games(): HasMany
     {
