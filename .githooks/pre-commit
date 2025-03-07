@@ -45,6 +45,9 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
+# Stage all changes made by the above steps
+git add -u
+
 git diff --name-only --cached
 
 echo "All checks passed! Proceeding with commit."
