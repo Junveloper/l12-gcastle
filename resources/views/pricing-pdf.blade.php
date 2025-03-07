@@ -93,7 +93,7 @@
             <!-- Pricing Structure Infoo -->
             <div class="flex flex-col items-center justify-center">
                 <div class="mt-4 sm:text-lg text-sm text-center">
-                    Purchasing 3 hours with a Photo ID will get you a Membership Account
+                    Purchasing 2.5 hours with a Photo ID will get you a Membership Account
                 </div>
 
                 <div class="font-bold sm:text-2xl mt-4 text-center">
