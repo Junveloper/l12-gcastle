@@ -6,8 +6,10 @@ namespace App\Models;
 
 use App\Traits\Core\HasUuid;
 use Carbon\CarbonImmutable;
+use Database\Factories\PlatformFactory;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
@@ -21,6 +23,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  * @property CarbonImmutable|null $updated_at
  * @property-read Collection<int, Game> $games
  *
+ * @method static PlatformFactory factory($count = null, $state = [])
  * @method static Builder<static>|Platform newModelQuery()
  * @method static Builder<static>|Platform newQuery()
  * @method static Builder<static>|Platform query()
@@ -36,6 +39,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  */
 class Platform extends Model
 {
+    use HasFactory;
     use HasUuid;
 
     protected function casts(): array

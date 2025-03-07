@@ -6,7 +6,9 @@ namespace App\Models;
 
 use App\Traits\Core\HasUuid;
 use Carbon\CarbonImmutable;
+use Database\Factories\GameFactory;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
@@ -21,6 +23,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  * @property CarbonImmutable|null $updated_at
  * @property-read Platform $platform
  *
+ * @method static GameFactory factory($count = null, $state = [])
  * @method static Builder<static>|Game newModelQuery()
  * @method static Builder<static>|Game newQuery()
  * @method static Builder<static>|Game query()
@@ -37,6 +40,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  */
 class Game extends Model
 {
+    use HasFactory;
     use HasUuid;
 
     protected function casts(): array
