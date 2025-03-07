@@ -13,6 +13,7 @@ return new class extends Migration
             $table->uuid('uuid')->unique();
             $table->string('name');
             $table->integer('display_order');
+            $table->timestamp('archived_at')->nullable();
             $table->timestamps();
         });
     }

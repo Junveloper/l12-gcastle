@@ -11,9 +11,10 @@ return new class extends Migration
         Schema::create('games', function (Blueprint $table) {
             $table->id();
             $table->uuid('uuid')->unique();
-            $table->foreignId('platform_id')->constrained('platforms')->nullOnDelete();
+            $table->foreignId('platform_id')->constrained('platforms');
             $table->string('name');
             $table->boolean('is_free');
+            $table->timestamp('archived_at')->nullable();
             $table->timestamps();
         });
     }
