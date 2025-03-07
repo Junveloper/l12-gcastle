@@ -18,12 +18,9 @@ use Illuminate\Notifications\Notifiable;
 
 /**
  * @property int $id
- * @property string $uuid
- * @property string $first_name
- * @property string $last_name
+ * @property string $name
  * @property string $email
- * @property string $employment_start_date
- * @property string|null $employment_end_date
+ * @property CarbonImmutable|null $email_verified_at
  * @property string $password
  * @property string|null $remember_token
  * @property CarbonImmutable|null $created_at
@@ -37,15 +34,12 @@ use Illuminate\Notifications\Notifiable;
  * @method static Builder<static>|User query()
  * @method static Builder<static>|User whereCreatedAt($value)
  * @method static Builder<static>|User whereEmail($value)
- * @method static Builder<static>|User whereEmploymentEndDate($value)
- * @method static Builder<static>|User whereEmploymentStartDate($value)
- * @method static Builder<static>|User whereFirstName($value)
+ * @method static Builder<static>|User whereEmailVerifiedAt($value)
  * @method static Builder<static>|User whereId($value)
- * @method static Builder<static>|User whereLastName($value)
+ * @method static Builder<static>|User whereName($value)
  * @method static Builder<static>|User wherePassword($value)
  * @method static Builder<static>|User whereRememberToken($value)
  * @method static Builder<static>|User whereUpdatedAt($value)
- * @method static Builder<static>|User whereUuid($value)
  *
  * @mixin \Eloquent
  */
