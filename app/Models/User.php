@@ -18,15 +18,18 @@ use Illuminate\Notifications\Notifiable;
 
 /**
  * @property int $id
- * @property string $name
+ * @property string $uuid
+ * @property string $first_name
+ * @property string $last_name
  * @property string $email
  * @property CarbonImmutable|null $email_verified_at
+ * @property string|null $employment_start_date
+ * @property string|null $employment_end_date
  * @property string $password
  * @property string|null $remember_token
  * @property CarbonImmutable|null $created_at
  * @property CarbonImmutable|null $updated_at
  * @property-read DatabaseNotificationCollection<int, DatabaseNotification> $notifications
- * @property-read int|null $notifications_count
  *
  * @method static UserFactory factory($count = null, $state = [])
  * @method static Builder<static>|User newModelQuery()
@@ -35,11 +38,15 @@ use Illuminate\Notifications\Notifiable;
  * @method static Builder<static>|User whereCreatedAt($value)
  * @method static Builder<static>|User whereEmail($value)
  * @method static Builder<static>|User whereEmailVerifiedAt($value)
+ * @method static Builder<static>|User whereEmploymentEndDate($value)
+ * @method static Builder<static>|User whereEmploymentStartDate($value)
+ * @method static Builder<static>|User whereFirstName($value)
  * @method static Builder<static>|User whereId($value)
- * @method static Builder<static>|User whereName($value)
+ * @method static Builder<static>|User whereLastName($value)
  * @method static Builder<static>|User wherePassword($value)
  * @method static Builder<static>|User whereRememberToken($value)
  * @method static Builder<static>|User whereUpdatedAt($value)
+ * @method static Builder<static>|User whereUuid($value)
  *
  * @mixin \Eloquent
  */
