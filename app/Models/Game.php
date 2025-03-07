@@ -1,10 +1,36 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Models;
 
 use App\Traits\Core\HasUuid;
+use Carbon\CarbonImmutable;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * @property int $id
+ * @property string $uuid
+ * @property int $platform_id
+ * @property string $name
+ * @property bool $is_free
+ * @property CarbonImmutable|null $created_at
+ * @property CarbonImmutable|null $updated_at
+ *
+ * @method static Builder<static>|Game newModelQuery()
+ * @method static Builder<static>|Game newQuery()
+ * @method static Builder<static>|Game query()
+ * @method static Builder<static>|Game whereCreatedAt($value)
+ * @method static Builder<static>|Game whereId($value)
+ * @method static Builder<static>|Game whereIsFree($value)
+ * @method static Builder<static>|Game whereName($value)
+ * @method static Builder<static>|Game wherePlatformId($value)
+ * @method static Builder<static>|Game whereUpdatedAt($value)
+ * @method static Builder<static>|Game whereUuid($value)
+ *
+ * @mixin \Eloquent
+ */
 class Game extends Model
 {
     use HasUuid;
