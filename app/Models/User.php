@@ -6,8 +6,12 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 
+use App\Traits\Core\HasUuid;
 use Carbon\CarbonImmutable;
 use Database\Factories\UserFactory;
+use Filament\Models\Contracts\FilamentUser;
+use Filament\Models\Contracts\HasName;
+use Filament\Panel;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -17,9 +21,13 @@ use Illuminate\Notifications\Notifiable;
 
 /**
  * @property int $id
- * @property string $name
+ * @property string $uuid
+ * @property string $first_name
+ * @property string $last_name
  * @property string $email
  * @property CarbonImmutable|null $email_verified_at
+ * @property string|null $employment_start_date
+ * @property string|null $employment_end_date
  * @property string $password
  * @property string|null $remember_token
  * @property CarbonImmutable|null $created_at
@@ -34,29 +42,23 @@ use Illuminate\Notifications\Notifiable;
  * @method static Builder<static>|User whereCreatedAt($value)
  * @method static Builder<static>|User whereEmail($value)
  * @method static Builder<static>|User whereEmailVerifiedAt($value)
+ * @method static Builder<static>|User whereEmploymentEndDate($value)
+ * @method static Builder<static>|User whereEmploymentStartDate($value)
+ * @method static Builder<static>|User whereFirstName($value)
  * @method static Builder<static>|User whereId($value)
- * @method static Builder<static>|User whereName($value)
+ * @method static Builder<static>|User whereLastName($value)
  * @method static Builder<static>|User wherePassword($value)
  * @method static Builder<static>|User whereRememberToken($value)
  * @method static Builder<static>|User whereUpdatedAt($value)
+ * @method static Builder<static>|User whereUuid($value)
  *
  * @mixin \Eloquent
  */
-class User extends Authenticatable
+class User extends Authenticatable implements FilamentUser, HasName
 {
-    /** @use HasFactory<UserFactory> */
-    use HasFactory, Notifiable;
-
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var list<string>
-     */
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-    ];
+    use HasFactory;
+    use HasUuid;
+    use Notifiable;
 
     /**
      * The attributes that should be hidden for serialization.
@@ -79,5 +81,15 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    public function canAccessPanel(Panel $panel): bool
+    {
+        return true;
+    }
+
+    public function getFilamentName(): string
+    {
+        return $this->first_name.' '.$this->last_name;
     }
 }
