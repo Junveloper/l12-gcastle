@@ -92,7 +92,7 @@ return [
     |
     */
 
-    'write_model_relation_count_properties' => false,
+    'write_model_relation_count_properties' => true,
 
     /*
     |--------------------------------------------------------------------------

@@ -21,6 +21,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  * @property CarbonImmutable|null $created_at
  * @property CarbonImmutable|null $updated_at
  * @property-read Collection<int, Game> $games
+ * @property-read int|null $games_count
  *
  * @method static PlatformFactory factory($count = null, $state = [])
  * @method static Builder<static>|Platform newModelQuery()

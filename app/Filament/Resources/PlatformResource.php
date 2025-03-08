@@ -16,12 +16,15 @@ use Filament\Tables\Actions\DeleteBulkAction;
 use Filament\Tables\Actions\EditAction;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Builder;
 
 class PlatformResource extends Resource
 {
     protected static ?string $model = Platform::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-folder';
+
+    protected static ?int $navigationSort = 2;
 
     public static function form(Form $form): Form
     {
@@ -42,7 +45,12 @@ class PlatformResource extends Resource
         return $table
             ->columns([
                 TextColumn::make('name'),
-                TextColumn::make('display_order'),
+                TextColumn::make('display_order')
+                    ->label('Display Order')
+                    ->sortable(),
+                TextColumn::make('games_count')
+                    ->label('Number of Games')
+                    ->sortable(),
             ])
             ->filters([
                 //
@@ -54,7 +62,8 @@ class PlatformResource extends Resource
                 BulkActionGroup::make([
                     DeleteBulkAction::make(),
                 ]),
-            ]);
+            ])
+            ->modifyQueryUsing(fn (Builder $query) => $query->withCount('games'));
     }
 
     public static function getRelations(): array
