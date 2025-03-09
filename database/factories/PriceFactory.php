@@ -2,12 +2,15 @@
 
 namespace Database\Factories;
 
-use App\Enums\Prices\PriceType;
+use App\Domains\Price\Enums\PriceType;
+use App\Domains\Price\Models\Price;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
 class PriceFactory extends Factory
 {
+    protected $model = Price::class;
+
     public function definition(): array
     {
         return [

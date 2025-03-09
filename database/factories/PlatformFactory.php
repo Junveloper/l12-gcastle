@@ -2,11 +2,14 @@
 
 namespace Database\Factories;
 
+use App\Domains\Platform\Platform;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
 class PlatformFactory extends Factory
 {
+    protected $model = Platform::class;
+
     public function definition(): array
     {
         return [

@@ -2,12 +2,15 @@
 
 namespace Database\Factories;
 
-use App\Models\Platform;
+use App\Domains\Game\Models\Game;
+use App\Domains\Platform\Platform;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
 class GameFactory extends Factory
 {
+    protected $model = Game::class;
+
     public function definition(): array
     {
         return [

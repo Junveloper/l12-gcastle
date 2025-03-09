@@ -2,8 +2,8 @@
 
 namespace Database\Seeders;
 
-use App\Enums\Prices\PriceType;
-use App\Models\Price;
+use App\Domains\Price\Enums\PriceType;
+use App\Domains\Price\Models\Price;
 use Illuminate\Database\Seeder;
 
 class PriceSeeder extends Seeder

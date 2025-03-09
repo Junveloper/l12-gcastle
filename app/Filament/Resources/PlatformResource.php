@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace App\Filament\Resources;
 
+use App\Domains\Platform\Platform;
 use App\Filament\Resources\PlatformResource\Pages\CreatePlatform;
 use App\Filament\Resources\PlatformResource\Pages\EditPlatform;
 use App\Filament\Resources\PlatformResource\Pages\ListPlatforms;
-use App\Models\Platform;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;

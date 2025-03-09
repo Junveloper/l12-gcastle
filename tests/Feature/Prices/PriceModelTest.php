@@ -2,8 +2,8 @@
 
 declare(strict_types=1);
 
-use App\Enums\Prices\PriceType;
-use App\Models\Price;
+use App\Domains\Price\Enums\PriceType;
+use App\Domains\Price\Models\Price;
 
 it('returns correct price in dollars', function (
     array $priceData,

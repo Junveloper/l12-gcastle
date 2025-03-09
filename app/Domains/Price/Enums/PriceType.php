@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Enums\Prices;
+namespace App\Domains\Price\Enums;
 
 enum PriceType: string
 {

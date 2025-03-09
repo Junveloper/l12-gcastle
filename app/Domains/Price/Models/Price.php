@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Models;
+namespace App\Domains\Price\Models;
 
-use App\Enums\Prices\PriceType;
+use App\Domains\Price\Enums\PriceType;
 use App\Traits\Core\HasUuid;
 use Carbon\CarbonImmutable;
 use Database\Factories\PriceFactory;
@@ -14,6 +14,8 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Number;
 
 /**
+ *
+ *
  * @property int $id
  * @property string $uuid
  * @property PriceType $type
@@ -24,7 +26,6 @@ use Illuminate\Support\Number;
  * @property CarbonImmutable|null $purchasable_to
  * @property CarbonImmutable|null $created_at
  * @property CarbonImmutable|null $updated_at
- *
  * @method static PriceFactory factory($count = null, $state = [])
  * @method static Builder<static>|Price newModelQuery()
  * @method static Builder<static>|Price newQuery()
@@ -39,7 +40,6 @@ use Illuminate\Support\Number;
  * @method static Builder<static>|Price whereType($value)
  * @method static Builder<static>|Price whereUpdatedAt($value)
  * @method static Builder<static>|Price whereUuid($value)
- *
  * @mixin \Eloquent
  */
 class Price extends Model

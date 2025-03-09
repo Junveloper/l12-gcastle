@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace App\Filament\Resources;
 
+use App\Domains\Game\Models\Game;
 use App\Filament\Resources\GameResource\Pages\CreateGame;
 use App\Filament\Resources\GameResource\Pages\EditGame;
 use App\Filament\Resources\GameResource\Pages\ListGames;
-use App\Models\Game;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
