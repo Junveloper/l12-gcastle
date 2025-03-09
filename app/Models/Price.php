@@ -11,6 +11,7 @@ use Database\Factories\PriceFactory;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Number;
 
 /**
  * @property int $id
@@ -54,5 +55,31 @@ class Price extends Model
             'purchasable_from' => 'datetime:H:i:s',
             'purchasable_to' => 'datetime:H:i:s',
         ];
+    }
+
+    public function getDurationInHours(): float
+    {
+        return round($this->duration / 60, 2);
+    }
+
+    public function getHoursLabel(): string
+    {
+        $hours = $this->getDurationInHours();
+
+        if ($hours === 1.0) {
+            return '1 hour';
+        }
+
+        return "{$hours} hours";
+    }
+
+    public function getPriceInDollars(): string
+    {
+        return Number::currency(
+            number: $this->price / 100,
+            in: 'AUD',
+            locale: 'en_AU',
+            precision: 0,
+        );
     }
 }
