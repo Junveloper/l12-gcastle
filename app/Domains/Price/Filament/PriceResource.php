@@ -9,6 +9,8 @@ use App\Domains\Price\Filament\PriceResource\Pages\CreatePrice;
 use App\Domains\Price\Filament\PriceResource\Pages\EditPrice;
 use App\Domains\Price\Filament\PriceResource\Pages\ListPrices;
 use App\Domains\Price\Models\Price;
+use Filament\Forms\Components\Select;
+use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Notifications\Notification;
 use Filament\Resources\Resource;
@@ -31,17 +33,41 @@ class PriceResource extends Resource
     {
         return $form
             ->schema([
-                //
+                Select::make('type')
+                    ->options(PriceType::class)
+                    ->default(PriceType::Membership)
+                    ->columnSpanFull()
+                    ->helperText('For non-membership/night special rates, edit the existing items.')
+                    ->disabled()
+                    ->dehydrated(true)
+                    ->required(),
+                TextInput::make('duration')
+                    ->required()
+                    ->suffix('minutes')
+                    ->numeric(),
+                TextInput::make('price')
+                    ->required()
+                    ->numeric()
+                    ->prefix('$')
+                    // Formatting for displaying
+                    ->formatStateUsing(fn (?int $state) => $state !== null && $state !== 0 ? number_format($state / 100, 2, '.', '') : null)
+                    // Formatting for saving
+                    ->dehydrateStateUsing(fn (float $state): float => $state * 100),
             ]);
     }
 
     public static function table(Table $table): Table
     {
         return $table
+            ->query(
+                Price::query()
+                    ->orderBy('type')
+                    ->orderBy('price')
+            )
             ->columns([
                 TextColumn::make('type')
                     ->label('Type')
-                    ->formatStateUsing(fn (Price $record) => $record->type->label())
+                    ->formatStateUsing(fn (Price $record) => $record->type->getLabel())
                     ->sortable(),
                 TextColumn::make('price')
                     ->label('Price')
@@ -71,7 +97,6 @@ class PriceResource extends Resource
 
                         return $state;
                     }),
-
             ])
             ->filters([
                 //

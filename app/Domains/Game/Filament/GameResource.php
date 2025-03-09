@@ -51,6 +51,11 @@ class GameResource extends Resource
     public static function table(Table $table): Table
     {
         return $table
+            ->query(
+                Game::query()
+                    ->orderBy('name')
+                    ->orderBy('platform_id')
+            )
             ->defaultPaginationPageOption(50)
             ->columns([
                 TextColumn::make('name')
