@@ -43,6 +43,7 @@ class PlatformResource extends Resource
     public static function table(Table $table): Table
     {
         return $table
+            ->reorderable('display_order')
             ->columns([
                 TextColumn::make('name'),
                 TextColumn::make('display_order')

@@ -16,8 +16,8 @@ use Filament\Resources\Resource;
 use Filament\Tables\Actions\BulkActionGroup;
 use Filament\Tables\Actions\DeleteBulkAction;
 use Filament\Tables\Actions\EditAction;
-use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Columns\ToggleColumn;
 use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Filters\TernaryFilter;
 use Filament\Tables\Table;
@@ -45,10 +45,6 @@ class GameResource extends Resource
                 Toggle::make('is_free')
                     ->label('Free to Play')
                     ->required(),
-                Toggle::make('archived_at')
-                    ->label('Archived')
-                    ->mutateDehydratedStateUsing(fn (bool $state) => $state ? now() : null)
-                    ->required(),
             ]);
     }
 
@@ -63,8 +59,7 @@ class GameResource extends Resource
                 TextColumn::make('platform.name')
                     ->sortable()
                     ->searchable(),
-                IconColumn::make('is_free')
-                    ->boolean()
+                ToggleColumn::make('is_free')
                     ->label('Free to Play')
                     ->sortable(),
             ])

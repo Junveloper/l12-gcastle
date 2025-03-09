@@ -6,6 +6,7 @@ namespace App\Providers;
 
 use App\Domains\Game\Filament\GameResource;
 use App\Domains\Platform\Filament\PlatformResource;
+use App\Domains\Price\Filament\PriceResource;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
@@ -38,6 +39,7 @@ class AdminPanelProvider extends PanelProvider
             ->resources([
                 PlatformResource::class,
                 GameResource::class,
+                PriceResource::class,
             ])
             ->pages([
                 Dashboard::class,

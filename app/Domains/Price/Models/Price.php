@@ -82,4 +82,9 @@ class Price extends Model
             precision: 0,
         );
     }
+
+    public function getMinutesLabel(): string
+    {
+        return "{$this->duration} minutes";
+    }
 }
