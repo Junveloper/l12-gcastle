@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
                 UserSeeder::class,
                 PlatformSeeder::class,
                 GameSeeder::class,
+                PriceSeeder::class,
             ]);
         });
     }
