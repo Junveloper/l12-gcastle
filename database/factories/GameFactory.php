@@ -3,7 +3,7 @@
 namespace Database\Factories;
 
 use App\Domains\Game\Models\Game;
-use App\Domains\Platform\Platform;
+use App\Domains\Platform\Models\Platform;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 

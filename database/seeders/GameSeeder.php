@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 use App\Domains\Game\Models\Game;
-use App\Domains\Platform\Platform;
+use App\Domains\Platform\Models\Platform;
 use Illuminate\Database\Seeder;
 
 class GameSeeder extends Seeder

@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Filament\Resources\PlatformResource\Pages;
+namespace App\Domains\Platform\Filament\PlatformResource\Pages;
 
-use App\Filament\Resources\PlatformResource;
+use App\Domains\Platform\Filament\PlatformResource;
 use Filament\Resources\Pages\CreateRecord;
 
 class CreatePlatform extends CreateRecord

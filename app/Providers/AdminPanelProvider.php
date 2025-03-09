@@ -2,8 +2,10 @@
 
 declare(strict_types=1);
 
-namespace App\Providers\Filament;
+namespace App\Providers;
 
+use App\Domains\Game\Filament\GameResource;
+use App\Domains\Platform\Filament\PlatformResource;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
@@ -33,12 +35,13 @@ class AdminPanelProvider extends PanelProvider
             ->colors([
                 'primary' => Color::Amber,
             ])
-            ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
-            ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
+            ->resources([
+                PlatformResource::class,
+                GameResource::class,
+            ])
             ->pages([
                 Dashboard::class,
             ])
-            ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
             ->widgets([
                 AccountWidget::class,
                 FilamentInfoWidget::class,
