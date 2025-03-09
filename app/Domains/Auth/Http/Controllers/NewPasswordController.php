@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Http\Controllers\Auth;
+namespace App\Domains\Auth\Http\Controllers;
 
 use Illuminate\Auth\Events\PasswordReset;
 use Illuminate\Http\RedirectResponse;

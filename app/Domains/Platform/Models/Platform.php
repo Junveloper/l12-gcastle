@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace App\Domains\Platform\Models;
 
+use App\Domains\App\Traits\HasUuid;
 use App\Domains\Game\Models\Game;
-use App\Traits\Core\HasUuid;
 use Carbon\CarbonImmutable;
 use Database\Factories\PlatformFactory;
 use Illuminate\Database\Eloquent\Builder;

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Http\Middleware;
+namespace App\Domains\App\Middleware;
 
 use Illuminate\Foundation\Inspiring;
 use Illuminate\Http\Request;

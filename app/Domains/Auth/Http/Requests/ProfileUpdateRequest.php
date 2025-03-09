@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Http\Requests\Settings;
+namespace App\Domains\Auth\Http\Requests;
 
 use App\Domains\Auth\Models\User;
 use Illuminate\Contracts\Validation\ValidationRule;

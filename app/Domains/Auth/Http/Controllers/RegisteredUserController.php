@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Http\Controllers\Auth;
+namespace App\Domains\Auth\Http\Controllers;
 
 use App\Domains\Auth\Models\User;
 use Illuminate\Auth\Events\Registered;
