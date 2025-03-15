@@ -29,7 +29,7 @@ export default function Header() {
                         <SheetContent side="top" className="bg-sidebar flex w-full flex-col items-stretch justify-between">
                             <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
                             <SheetHeader className="flex justify-start text-left">
-                                <GcastleLogoIcon width={261} height={179} className="text-black dark:text-white" />
+                                <GcastleLogoIcon width={50} className="text-black dark:text-white" />
                             </SheetHeader>
                             <div className="mt-6 flex h-full flex-1 flex-col space-y-4">
                                 <div className="flex h-full flex-col justify-between text-sm">
