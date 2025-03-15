@@ -30,10 +30,12 @@ export type SharedData = {
 
 export type User = {
     id: number;
-    name: string;
+    first_name: string;
+    last_name: string;
     email: string;
-    avatar?: string;
     email_verified_at: string | null;
+    employment_start_date: string;
+    employment_end_date: string | null;
     created_at: string;
     updated_at: string;
     [key: string]: unknown; // This allows for additional properties...

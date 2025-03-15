@@ -2,11 +2,11 @@ import AppLogoIcon from '@/components/app-logo-icon';
 import { type SharedData } from '@/types';
 import { Link, usePage } from '@inertiajs/react';
 
-interface AuthLayoutProps {
+type AuthLayoutProps = {
     children: React.ReactNode;
     title?: string;
     description?: string;
-}
+};
 
 export default function AuthSplitLayout({ children, title, description }: AuthLayoutProps) {
     const { name, quote } = usePage<SharedData>().props;
