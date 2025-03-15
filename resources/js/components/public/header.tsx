@@ -3,7 +3,7 @@ import { Link } from '@inertiajs/react';
 import { LayoutGrid, Menu } from 'lucide-react';
 import { Icon } from '../icon';
 import { Button } from '../ui/button';
-import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '../ui/sheet';
+import { Sheet, SheetContent, SheetTitle, SheetTrigger } from '../ui/sheet';
 import GcastleLogoIcon from './gcastle-logo-icon';
 
 const mainNavItems: NavItem[] = [
@@ -27,11 +27,13 @@ export default function Header() {
                             </Button>
                         </SheetTrigger>
                         <SheetContent side="top" className="bg-sidebar flex w-full flex-col items-stretch justify-between">
-                            <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
-                            <SheetHeader className="flex justify-start text-left">
-                                <GcastleLogoIcon width={50} className="text-black dark:text-white" />
-                            </SheetHeader>
-                            <div className="mt-6 flex h-full flex-1 flex-col space-y-4">
+                            <SheetTitle>
+                                <div className="flex items-center space-x-4">
+                                    <GcastleLogoIcon width={40} className="text-black dark:text-white" />
+                                    <span className="text-base font-bold">G-Castle Internet Cafe</span>
+                                </div>
+                            </SheetTitle>
+                            <div className="flex h-full flex-1 flex-col space-y-4">
                                 <div className="flex h-full flex-col justify-between text-sm">
                                     <div className="flex flex-col space-y-4">
                                         {mainNavItems.map((item) => (
