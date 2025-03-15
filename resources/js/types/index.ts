@@ -16,7 +16,8 @@ export type NavGroup = {
 
 export type NavItem = {
     title: string;
-    url: string;
+    url?: string;
+    action?: () => void;
     icon?: LucideIcon | null;
     isActive?: boolean;
 };
