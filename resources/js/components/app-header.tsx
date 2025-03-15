@@ -38,9 +38,9 @@ const rightNavItems: NavItem[] = [
 
 const activeItemStyles = 'text-neutral-900 dark:bg-neutral-800 dark:text-neutral-100';
 
-interface AppHeaderProps {
+type AppHeaderProps = {
     breadcrumbs?: BreadcrumbItem[];
-}
+};
 
 export function AppHeader({ breadcrumbs = [] }: AppHeaderProps) {
     const page = usePage<SharedData>();
