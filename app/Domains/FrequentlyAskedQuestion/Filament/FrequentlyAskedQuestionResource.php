@@ -12,6 +12,10 @@ use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
+use Filament\Tables\Actions\BulkActionGroup;
+use Filament\Tables\Actions\DeleteAction;
+use Filament\Tables\Actions\DeleteBulkAction;
+use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 
 class FrequentlyAskedQuestionResource extends Resource
@@ -34,6 +38,9 @@ class FrequentlyAskedQuestionResource extends Resource
                 ->label('Answer')
                 ->columnSpanFull()
                 ->required()
+                ->fileAttachmentsDisk('s3')
+                ->fileAttachmentsDirectory('attachments')
+                ->fileAttachmentsVisibility('private')
                 ->maxLength(65535),
         ]);
     }
@@ -42,12 +49,25 @@ class FrequentlyAskedQuestionResource extends Resource
     {
         return $table
             ->reorderable('display_order')
+            ->defaultPaginationPageOption(50)
             ->columns([
+                TextColumn::make('question')
+                    ->label('Question')
+                    ->searchable(),
+                TextColumn::make('display_order')
+                    ->label('Display Order')
+                    ->sortable(),
 
             ])
             ->filters([])
-            ->actions([])
-            ->bulkActions([]);
+            ->actions([
+                DeleteAction::make(),
+            ])
+            ->bulkActions([
+                BulkActionGroup::make([
+                    DeleteBulkAction::make(),
+                ]),
+            ]);
     }
 
     public static function getRelations(): array

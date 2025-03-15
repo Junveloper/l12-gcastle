@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Domains\FrequentlyAskedQuestion\Models;
 
+use App\Domains\App\Traits\HasDisplayOrder;
 use App\Domains\App\Traits\HasUuid;
 use Carbon\CarbonImmutable;
 use Database\Factories\FrequentlyAskedQuestionFactory;
@@ -36,6 +37,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class FrequentlyAskedQuestion extends Model
 {
+    use HasDisplayOrder;
     use HasFactory;
     use HasUuid;
 }
