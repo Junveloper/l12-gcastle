@@ -53,11 +53,11 @@ class FrequentlyAskedQuestionResource extends Resource
             ->columns([
                 TextColumn::make('question')
                     ->label('Question')
+                    ->limit(80)
                     ->searchable(),
                 TextColumn::make('display_order')
                     ->label('Display Order')
                     ->sortable(),
-
             ])
             ->filters([])
             ->actions([
