@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Domains\Price\Models;
 
-use App\Domains\App\Traits\HasUuid;
+use App\Domains\App\Traits\Model\HasUuid;
 use App\Domains\Price\Enums\PriceType;
 use Carbon\CarbonImmutable;
 use Database\Factories\PriceFactory;

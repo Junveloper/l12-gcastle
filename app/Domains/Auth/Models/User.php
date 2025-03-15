@@ -6,7 +6,7 @@ namespace App\Domains\Auth\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 
-use App\Domains\App\Traits\HasUuid;
+use App\Domains\App\Traits\Model\HasUuid;
 use Carbon\CarbonImmutable;
 use Database\Factories\UserFactory;
 use Filament\Models\Contracts\FilamentUser;

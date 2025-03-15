@@ -12,8 +12,8 @@ use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables\Actions\BulkActionGroup;
+use Filament\Tables\Actions\DeleteAction;
 use Filament\Tables\Actions\DeleteBulkAction;
-use Filament\Tables\Actions\EditAction;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
@@ -34,9 +34,6 @@ class PlatformResource extends Resource
                     ->required()
                     ->columnSpanFull()
                     ->maxLength(255),
-                TextInput::make('display_order')
-                    ->required()
-                    ->integer(),
             ]);
     }
 
@@ -46,18 +43,18 @@ class PlatformResource extends Resource
             ->reorderable('display_order')
             ->columns([
                 TextColumn::make('name'),
-                TextColumn::make('display_order')
-                    ->label('Display Order')
-                    ->sortable(),
                 TextColumn::make('games_count')
                     ->label('Number of Games')
+                    ->sortable(),
+                TextColumn::make('display_order')
+                    ->label('Display Order')
                     ->sortable(),
             ])
             ->filters([
                 //
             ])
             ->actions([
-                EditAction::make(),
+                DeleteAction::make(),
             ])
             ->bulkActions([
                 BulkActionGroup::make([

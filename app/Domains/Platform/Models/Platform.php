@@ -4,7 +4,8 @@ declare(strict_types=1);
 
 namespace App\Domains\Platform\Models;
 
-use App\Domains\App\Traits\HasUuid;
+use App\Domains\App\Traits\Model\HasDisplayOrder;
+use App\Domains\App\Traits\Model\HasUuid;
 use App\Domains\Game\Models\Game;
 use Carbon\CarbonImmutable;
 use Database\Factories\PlatformFactory;
@@ -39,6 +40,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  */
 class Platform extends Model
 {
+    use HasDisplayOrder;
     use HasFactory;
     use HasUuid;
 
