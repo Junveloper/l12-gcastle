@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Domains\App\Traits;
+namespace App\Domains\App\Traits\Model;
 
 trait HasDisplayOrder
 {

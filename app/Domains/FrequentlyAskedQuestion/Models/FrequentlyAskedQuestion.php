@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace App\Domains\FrequentlyAskedQuestion\Models;
 
-use App\Domains\App\Traits\HasDisplayOrder;
-use App\Domains\App\Traits\HasUuid;
+use App\Domains\App\Traits\Model\HasDisplayOrder;
+use App\Domains\App\Traits\Model\HasUuid;
 use Carbon\CarbonImmutable;
 use Database\Factories\FrequentlyAskedQuestionFactory;
 use Illuminate\Database\Eloquent\Builder;
