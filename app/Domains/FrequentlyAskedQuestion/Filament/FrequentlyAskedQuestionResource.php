@@ -8,6 +8,8 @@ use App\Domains\FrequentlyAskedQuestion\Filament\FrequentlyAskedQuestionResource
 use App\Domains\FrequentlyAskedQuestion\Filament\FrequentlyAskedQuestionResource\EditFrequentlyAskedQuestion;
 use App\Domains\FrequentlyAskedQuestion\Filament\FrequentlyAskedQuestionResource\ListFrequentlyAskedQuestion;
 use App\Domains\FrequentlyAskedQuestion\Models\FrequentlyAskedQuestion;
+use Filament\Forms\Components\RichEditor;
+use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables\Table;
@@ -22,12 +24,30 @@ class FrequentlyAskedQuestionResource extends Resource
 
     public static function form(Form $form): Form
     {
-        return $form->schema([]);
+        return $form->schema([
+            TextInput::make('question')
+                ->label('Question')
+                ->columnSpanFull()
+                ->required()
+                ->maxLength(255),
+            RichEditor::make('answer')
+                ->label('Answer')
+                ->columnSpanFull()
+                ->required()
+                ->maxLength(65535),
+        ]);
     }
 
     public static function table(Table $table): Table
     {
-        return $table->columns([])->filters([])->actions([])->bulkActions([]);
+        return $table
+            ->reorderable('display_order')
+            ->columns([
+
+            ])
+            ->filters([])
+            ->actions([])
+            ->bulkActions([]);
     }
 
     public static function getRelations(): array

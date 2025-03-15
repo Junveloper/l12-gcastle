@@ -34,9 +34,6 @@ class PlatformResource extends Resource
                     ->required()
                     ->columnSpanFull()
                     ->maxLength(255),
-                TextInput::make('display_order')
-                    ->required()
-                    ->integer(),
             ]);
     }
 
