@@ -33,7 +33,7 @@ export default function Header() {
                                     <span className="text-base font-bold">G-Castle Internet Cafe</span>
                                 </div>
                             </SheetTitle>
-                            <div className="flex h-full flex-1 flex-col space-y-4">
+                            <div className="mt-6 flex h-full flex-1 flex-col space-y-4">
                                 <div className="flex h-full flex-col justify-between text-sm">
                                     <div className="flex flex-col space-y-4">
                                         {mainNavItems.map((item) => (
