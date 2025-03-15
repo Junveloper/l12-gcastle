@@ -22,8 +22,6 @@ export type NavItem = {
 };
 
 export type SharedData = {
-    name: string;
-    quote: { message: string; author: string };
     auth: Auth;
     [key: string]: unknown;
 };
