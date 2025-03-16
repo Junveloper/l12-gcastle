@@ -1,6 +1,6 @@
 import { cn } from '@/lib/utils';
 import { NavItem } from '@/types';
-import { LayoutGrid, Menu } from 'lucide-react';
+import { Menu } from 'lucide-react';
 import { Button } from '../ui/button';
 import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, navigationMenuTriggerStyle } from '../ui/navigation-menu';
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from '../ui/sheet';
@@ -8,17 +8,27 @@ import GcastleLogoIcon from './gcastle-logo-icon';
 
 const mainNavItems: NavItem[] = [
     {
-        title: 'Dashboard',
-        url: '/dashboard',
-        action: () => console.log('ha'),
-        icon: LayoutGrid,
+        title: 'Price',
+        action: () => console.log('Should Open Price'),
+    },
+    {
+        title: 'Game List',
+        action: () => console.log('Should Open Game List'),
+    },
+    {
+        title: 'FAQ',
+        action: () => console.log('Should Open FAQ'),
+    },
+    {
+        title: 'Contact',
+        action: () => console.log('Should Open Contact'),
     },
 ];
 
 export default function Header() {
     return (
         <div className="border-sidebar-border/80 border-b">
-            <div className="mx-auto flex h-16 items-center justify-between px-4 md:max-w-7xl lg:h-30 lg:px-12">
+            <div className="mx-auto flex h-16 items-center px-4 md:max-w-7xl lg:h-30 lg:px-12">
                 {/* Mobile Menu */}
                 <div className="lg:hidden">
                     <Sheet>
@@ -65,7 +75,7 @@ export default function Header() {
                 </div>
 
                 {/* Desktop Navigation */}
-                <div className="ml-6 hidden h-full items-center space-x-6 lg:flex">
+                <div className="ml-16 hidden h-full items-center space-x-6 lg:flex">
                     <NavigationMenu className="flex h-full items-stretch">
                         <NavigationMenuList className="flex h-full items-stretch space-x-2">
                             {mainNavItems.map((item, index) => (
@@ -74,7 +84,7 @@ export default function Header() {
                                         className={cn(navigationMenuTriggerStyle(), 'h-9 cursor-pointer px-3 select-none')}
                                         onClick={item.action}
                                     >
-                                        {item.title}
+                                        <span className="text-base font-bold tracking-wider">{item.title}</span>
                                     </NavigationMenuLink>
                                 </NavigationMenuItem>
                             ))}
