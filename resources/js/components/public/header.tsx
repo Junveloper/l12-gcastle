@@ -18,7 +18,7 @@ const mainNavItems: NavItem[] = [
 export default function Header() {
     return (
         <div className="border-sidebar-border/80 border-b">
-            <div className="mx-auto flex h-30 items-center justify-between px-12 md:max-w-7xl">
+            <div className="mx-auto flex h-16 items-center justify-between px-4 md:max-w-7xl lg:h-30 lg:px-12">
                 {/* Mobile Menu */}
                 <div className="lg:hidden">
                     <Sheet>
