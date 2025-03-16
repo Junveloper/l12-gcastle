@@ -1,13 +1,23 @@
 import heroImage from '@/images/hero_image.jpg';
+import { Separator } from '../ui/separator';
 
 export default function HeroSection() {
     return (
-        <div className="h-[500px] border bg-cover bg-center" style={{ backgroundImage: `url(${heroImage})` }}>
+        <div className="h-[400px] border bg-cover bg-center" style={{ backgroundImage: `url(${heroImage})` }}>
             <div className="flex h-full w-full flex-col bg-zinc-950/70">
-                <div className="my-auto w-full space-y-16 py-4 backdrop-blur-sm">
-                    <h2 className="text-center text-3xl font-bold tracking-wider text-white uppercase">Welcome to G Castle</h2>
+                <div className="my-auto flex w-full flex-col items-center space-y-10 py-6 backdrop-blur-sm">
+                    <div className="font-arcade text-center text-5xl font-bold tracking-wide text-white uppercase">
+                        Descend into the Gaming Dungeon
+                    </div>
 
-                    <div className="px-2 text-center text-5xl leading-snug text-white">Some Description</div>
+                    <div className="w-30">
+                        <Separator className="w-30" />
+                    </div>
+
+                    <div className="max-w-md space-y-4 text-center text-base font-light text-white">
+                        <p>A modern-day arcade where 67 gaming PCs await you</p>
+                        <p>Right in the heart of Brisbane City</p>
+                    </div>
                 </div>
             </div>
         </div>
