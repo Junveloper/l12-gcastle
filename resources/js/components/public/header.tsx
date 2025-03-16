@@ -28,9 +28,9 @@ const mainNavItems: NavItem[] = [
 export default function Header() {
     return (
         <div className="border-sidebar-border/80 border-b">
-            <div className="mx-auto flex h-16 items-center px-4 md:max-w-7xl lg:h-30 lg:px-12">
+            <div className="mx-auto flex h-16 items-center px-4 md:h-30 md:max-w-7xl md:px-12">
                 {/* Mobile Menu */}
-                <div className="lg:hidden">
+                <div className="md:hidden">
                     <Sheet>
                         <SheetTrigger asChild>
                             <Button variant="ghost" size="icon" className="mr-2 h-[34px] w-[34px]">
@@ -66,7 +66,7 @@ export default function Header() {
                 </div>
 
                 {/* Logo */}
-                <div className="hidden items-center justify-center space-x-4 select-none lg:flex">
+                <div className="hidden items-center justify-center space-x-4 select-none md:flex">
                     <GcastleLogoIcon width={80} />
                     <div className="flex flex-col">
                         <span className="font-arcade text-4xl leading-none tracking-wider">G CASTLE</span>
@@ -75,7 +75,7 @@ export default function Header() {
                 </div>
 
                 {/* Desktop Navigation */}
-                <div className="ml-16 hidden h-full items-center space-x-6 lg:flex">
+                <div className="ml-16 hidden h-full items-center space-x-6 md:flex">
                     <NavigationMenu className="flex h-full items-stretch">
                         <NavigationMenuList className="flex h-full items-stretch space-x-2">
                             {mainNavItems.map((item, index) => (
