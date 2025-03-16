@@ -1,4 +1,5 @@
 import Header from '@/components/public/header';
+import HeroSection from '@/components/public/hero-section';
 import { PublicLayout } from '@/layouts/public-layout';
 import { Head } from '@inertiajs/react';
 
@@ -12,6 +13,7 @@ export default function Home() {
             </Head>
             <PublicLayout>
                 <Header />
+                <HeroSection />
             </PublicLayout>
         </>
     );
