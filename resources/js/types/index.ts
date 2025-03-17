@@ -16,14 +16,13 @@ export type NavGroup = {
 
 export type NavItem = {
     title: string;
-    url: string;
+    url?: string;
+    action?: () => void;
     icon?: LucideIcon | null;
     isActive?: boolean;
 };
 
 export type SharedData = {
-    name: string;
-    quote: { message: string; author: string };
     auth: Auth;
     [key: string]: unknown;
 };
