@@ -1,11 +1,11 @@
-import heroImage from '@/images/hero_image.jpg';
+import heroImage from '@/images/hero-image.jpeg';
 import { Separator } from '../ui/separator';
 
 export default function HeroSection() {
     return (
-        <div className="h-[500px] bg-cover bg-center" style={{ backgroundImage: `url(${heroImage})` }}>
+        <div className="h-[500px] bg-cover md:bg-left-top" style={{ backgroundImage: `url(${heroImage})` }}>
             <div className="bg-background/70 flex h-full w-full flex-col">
-                <div className="my-auto flex w-full flex-col items-center space-y-10 py-6 backdrop-blur-[4px]">
+                <div className="my-auto flex w-full flex-col items-center space-y-10 py-26 backdrop-blur-[4px]">
                     <div className="font-arcade text-foreground text-center text-5xl font-bold tracking-wide uppercase">
                         Descend into the Gaming Dungeon
                     </div>
