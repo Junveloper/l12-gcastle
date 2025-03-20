@@ -9,7 +9,7 @@ use App\Domains\Price\Http\Resources\PriceResource;
 use Inertia\Inertia;
 use Inertia\Response;
 
-final readonly class HomeController
+final readonly class RenderHomePageController
 {
     public function __invoke(GetPricesAction $getPrices): Response
     {
