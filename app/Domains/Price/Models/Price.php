@@ -5,9 +5,11 @@ declare(strict_types=1);
 namespace App\Domains\Price\Models;
 
 use App\Domains\App\Traits\Model\HasUuid;
+use App\Domains\Price\Collection\PriceCollection;
 use App\Domains\Price\Enums\PriceType;
 use Carbon\CarbonImmutable;
 use Database\Factories\PriceFactory;
+use Illuminate\Database\Eloquent\Attributes\CollectedBy;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -25,7 +27,9 @@ use Illuminate\Support\Number;
  * @property CarbonImmutable|null $created_at
  * @property CarbonImmutable|null $updated_at
  *
+ * @method static PriceCollection<int, static> all($columns = ['*'])
  * @method static PriceFactory factory($count = null, $state = [])
+ * @method static PriceCollection<int, static> get($columns = ['*'])
  * @method static Builder<static>|Price newModelQuery()
  * @method static Builder<static>|Price newQuery()
  * @method static Builder<static>|Price query()
@@ -42,6 +46,7 @@ use Illuminate\Support\Number;
  *
  * @mixin \Eloquent
  */
+#[CollectedBy(PriceCollection::class)]
 class Price extends Model
 {
     use HasFactory;
@@ -86,5 +91,20 @@ class Price extends Model
     public function getMinutesLabel(): string
     {
         return "{$this->duration} minutes";
+    }
+
+    public function isMemberPrice(): bool
+    {
+        return $this->type === PriceType::Membership;
+    }
+
+    public function isNonMemberPrice(): bool
+    {
+        return $this->type === PriceType::NonMember;
+    }
+
+    public function isNightSpecialPrice(): bool
+    {
+        return $this->type === PriceType::NightSpecial;
     }
 }
