@@ -256,3 +256,41 @@ it('returns correct hours label', function (
         '9 hours',
     ],
 ]);
+
+it('returns true when a Price is a Membership Price', function (): void {
+    $price = Price::factory()
+        ->create([
+            'type' => PriceType::Membership,
+            'price' => 1000,
+            'duration' => 150,
+            'is_membership_minimum' => true,
+        ]);
+
+    expect($price->isMemberPrice())->toBe(true);
+});
+
+it('returns true when a Price is a Night-Special Price', function (): void {
+    $price = Price::factory()
+        ->create([
+            'type' => PriceType::NightSpecial,
+            'price' => 2000,
+            'duration' => 540,
+            'is_membership_minimum' => false,
+            'purchasable_from' => '22:00:00',
+            'purchasable_to' => '02:00:00',
+        ]);
+
+    expect($price->isNightSpecialPrice())->toBe(true);
+});
+
+it('returns true when a price is a Non-Member Price', function (): void {
+    $price = Price::factory()
+        ->create([
+            'type' => PriceType::NonMember,
+            'price' => 500,
+            'duration' => 60,
+            'is_membership_minimum' => false,
+        ]);
+
+    expect($price->isNonMemberPrice())->toBe(true);
+});

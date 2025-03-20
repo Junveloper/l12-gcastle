@@ -7,6 +7,7 @@ namespace App\Providers;
 use Carbon\CarbonImmutable;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\Facades\Date;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\ServiceProvider;
@@ -33,6 +34,7 @@ class AppServiceProvider extends ServiceProvider
         $this->configureModels();
         $this->configurePasswordValidation();
         $this->configureFactory();
+        $this->configureResponse();
     }
 
     private function configureCommands(): void
@@ -65,5 +67,10 @@ class AppServiceProvider extends ServiceProvider
 
             return $namespace.$modelName.'Factory';
         });
+    }
+
+    private function configureResponse(): void
+    {
+        JsonResource::withoutWrapping();
     }
 }

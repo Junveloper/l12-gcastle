@@ -4,12 +4,23 @@ declare(strict_types=1);
 
 namespace App\Domains\Home\Http\Controllers;
 
+use App\Domains\Price\Actions\GetPricesAction;
+use App\Domains\Price\Http\Resources\PriceResource;
 use Inertia\Inertia;
+use Inertia\Response;
 
-class HomeController
+final readonly class HomeController
 {
-    public function index()
+    public function __invoke(GetPricesAction $getPrices): Response
     {
-        return Inertia::render('home');
+        $prices = $getPrices->execute();
+
+        return Inertia::render('home', [
+            'prices' => [
+                'memberPrices' => PriceResource::collection($prices->getMemberPrices()),
+                'nonMemberPrice' => PriceResource::make($prices->getNonMemberPrice()),
+                'nightSpecialPrice' => PriceResource::make($prices->getNightSpecialPrice()),
+            ],
+        ]);
     }
 }
