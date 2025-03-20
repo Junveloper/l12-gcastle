@@ -53,8 +53,5 @@ jobs:
       - name: Generate Application Key
         run: php artisan key:generate
 
-      - name: Run Fresh Migration With Seeder
-        run: php artisan migrate:fresh --seed
-
       - name: Tests
         run: composer test
