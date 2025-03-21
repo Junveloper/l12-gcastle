@@ -13,7 +13,7 @@ export default function PriceSection({ prices }: PriceSectionProps) {
 
             <div className="bg-gradient-custom flex aspect-505/707 min-w-[565px] flex-col justify-center border p-8 text-white">
                 <div className="mx-auto flex flex-col items-center">
-                    <GcastleLogoIcon width={100} className="text-white" />
+                    <GcastleLogoIcon width={100} className="text-white" withBoxShadow />
                     <div className="font-arcade gcastle-text-shadow mt-2 text-5xl font-extrabold tracking-wider">G CASTLE</div>
                 </div>
             </div>
