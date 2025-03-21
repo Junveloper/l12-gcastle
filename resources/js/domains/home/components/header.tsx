@@ -1,10 +1,16 @@
+import GcastleLogoIcon from '@/components/public/gcastle-logo-icon';
+import { Button } from '@/components/ui/button';
+import {
+    NavigationMenu,
+    NavigationMenuItem,
+    NavigationMenuLink,
+    NavigationMenuList,
+    navigationMenuTriggerStyle,
+} from '@/components/ui/navigation-menu';
+import { Sheet, SheetContent, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
 import { NavItem } from '@/types';
 import { Menu } from 'lucide-react';
-import { Button } from '../ui/button';
-import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, navigationMenuTriggerStyle } from '../ui/navigation-menu';
-import { Sheet, SheetContent, SheetTitle, SheetTrigger } from '../ui/sheet';
-import GcastleLogoIcon from './gcastle-logo-icon';
 
 const mainNavItems: NavItem[] = [
     {
@@ -38,9 +44,9 @@ export default function Header() {
                                 <span className="text-base font-bold">G-Castle Internet Cafe</span>
                             </div>
                             <SheetTrigger>
-                                <Button variant="ghost" size="icon" className="mr-2 h-[34px] w-[34px]">
+                                <div className="hover:bg-accent hover:text-accent-foreground mr-2 flex h-[34px] w-[34px] items-center justify-center rounded-md">
                                     <Menu className="h-5 w-5" />
-                                </Button>
+                                </div>
                             </SheetTrigger>
                         </div>
                         <SheetContent side="top" className="bg-sidebar flex w-full flex-col items-stretch justify-between">

@@ -13,6 +13,7 @@ it('has all required prices in the prop', function (): void {
     seed(PriceSeeder::class);
 
     $expectedKeysOnPrice = [
+        'id',
         'type',
         'price',
         'duration',
@@ -21,18 +22,8 @@ it('has all required prices in the prop', function (): void {
         'purchasableTo',
     ];
 
-    $assertPriceStructure = fn (AssertableInertia $priceProp): AssertableJson => $priceProp->hasAll($expectedKeysOnPrice);
-
     get(route('home'))
-        ->assertInertia(function (AssertableInertia $page) use ($assertPriceStructure): void {
-            $page->component('home')
-                ->has('prices', 3)
-                ->has(
-                    key: 'prices.memberPrices',
-                    length: 6,
-                    callback: $assertPriceStructure
-                )
-                ->has('prices.nonMemberPrice', $assertPriceStructure)
-                ->has('prices.nightSpecialPrice', $assertPriceStructure);
-        });
+        ->assertInertia(fn (AssertableInertia $page): AssertableJson => $page->component('home')
+            ->has('prices', 8, fn (AssertableInertia $priceProp): AssertableJson => $priceProp->hasAll($expectedKeysOnPrice))
+        );
 });

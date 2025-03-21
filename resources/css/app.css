@@ -158,3 +158,22 @@
         @apply bg-background text-foreground;
     }
 }
+
+@layer utilities {
+    .gcastle-text-shadow {
+        text-shadow:
+            1px 0px 1px rgba(228, 5, 134, 1),
+            -1px 0px 1px rgba(63, 126, 255, 1);
+    }
+
+    .gcastle-box-shadow {
+        box-shadow:
+            2px 2px 3px 0px rgba(228, 5, 134, 1),
+            -2px -2px 3px 0px rgba(63, 126, 255, 1);
+    }
+
+    .bg-gradient-custom {
+        background: linear-gradient(135deg, rgba(63, 126, 255, 0.15) 0%, rgba(228, 5, 134, 0.15) 100%);
+        background-color: rgba(0, 0, 0, 0.97);
+    }
+}

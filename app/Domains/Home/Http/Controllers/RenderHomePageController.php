@@ -13,14 +13,8 @@ final readonly class RenderHomePageController
 {
     public function __invoke(GetPricesAction $getPrices): Response
     {
-        $prices = $getPrices->execute();
-
         return Inertia::render('home', [
-            'prices' => [
-                'memberPrices' => PriceResource::collection($prices->getMemberPrices()),
-                'nonMemberPrice' => PriceResource::make($prices->getNonMemberPrice()),
-                'nightSpecialPrice' => PriceResource::make($prices->getNightSpecialPrice()),
-            ],
+            'prices' => PriceResource::collection($getPrices->execute()),
         ]);
     }
 }
