@@ -50,7 +50,7 @@ export default function PriceSection({ prices }: PriceSectionProps) {
                             Purchasing {getHoursLabel(membershipMinimum)} with a Photo ID will get you a Membership Account
                         </div>
 
-                        <div className="mt-4 text-center text-sm font-bold md:text-base">Any unused time remains on your account for 365 days</div>
+                        <div className="mt-4 text-center text-base font-bold md:text-xl">Any unused time stays on your account for a year</div>
                     </div>
                 )}
 
