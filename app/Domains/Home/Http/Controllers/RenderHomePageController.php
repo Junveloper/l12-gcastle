@@ -16,11 +16,7 @@ final readonly class RenderHomePageController
         $prices = $getPrices->execute();
 
         return Inertia::render('home', [
-            'prices' => [
-                'memberPrices' => PriceResource::collection($prices->getMemberPrices()),
-                'nonMemberPrice' => PriceResource::make($prices->getNonMemberPrice()),
-                'nightSpecialPrice' => PriceResource::make($prices->getNightSpecialPrice()),
-            ],
+            'prices' => PriceResource::collection($prices),
         ]);
     }
 }

@@ -38,9 +38,9 @@ export default function Header() {
                                 <span className="text-base font-bold">G-Castle Internet Cafe</span>
                             </div>
                             <SheetTrigger>
-                                <Button variant="ghost" size="icon" className="mr-2 h-[34px] w-[34px]">
+                                <div className="hover:bg-accent hover:text-accent-foreground mr-2 flex h-[34px] w-[34px] items-center justify-center rounded-md">
                                     <Menu className="h-5 w-5" />
-                                </Button>
+                                </div>
                             </SheetTrigger>
                         </div>
                         <SheetContent side="top" className="bg-sidebar flex w-full flex-col items-stretch justify-between">
