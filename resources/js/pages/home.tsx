@@ -10,7 +10,6 @@ type HomeProps = {
 };
 
 export default function Home({ prices }: HomeProps) {
-    console.log(prices);
     return (
         <>
             <Head title="G-Castle Internet Cafe">
