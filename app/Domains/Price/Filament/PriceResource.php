@@ -92,7 +92,7 @@ class PriceResource extends Resource
                         Notification::make()
                             ->success()
                             ->title('Success')
-                            ->body("{$record->getHoursLabel()} is now set as the membership minimum.")
+                            ->body($record->getHoursLabel().' is now set as the membership minimum.')
                             ->send();
 
                         return $state;

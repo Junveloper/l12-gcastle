@@ -70,7 +70,7 @@ class Price extends Model
             return '1 hour';
         }
 
-        return "{$hours} hours";
+        return $hours.' hours';
     }
 
     public function getPriceInDollars(): string
@@ -85,7 +85,7 @@ class Price extends Model
 
     public function getMinutesLabel(): string
     {
-        return "{$this->duration} minutes";
+        return $this->duration.' minutes';
     }
 
     public function isMemberPrice(): bool
