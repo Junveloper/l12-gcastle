@@ -1,10 +1,16 @@
+import GcastleLogoIcon from '@/components/public/gcastle-logo-icon';
+import { Button } from '@/components/ui/button';
+import {
+    NavigationMenu,
+    NavigationMenuItem,
+    NavigationMenuLink,
+    NavigationMenuList,
+    navigationMenuTriggerStyle,
+} from '@/components/ui/navigation-menu';
+import { Sheet, SheetContent, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
 import { NavItem } from '@/types';
 import { Menu } from 'lucide-react';
-import { Button } from '../ui/button';
-import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, navigationMenuTriggerStyle } from '../ui/navigation-menu';
-import { Sheet, SheetContent, SheetTitle, SheetTrigger } from '../ui/sheet';
-import GcastleLogoIcon from './gcastle-logo-icon';
 
 const mainNavItems: NavItem[] = [
     {

@@ -1,5 +1,5 @@
+import { Separator } from '@/components/ui/separator';
 import heroImage from '@/images/hero-image.jpeg';
-import { Separator } from '../ui/separator';
 
 export default function HeroSection() {
     return (

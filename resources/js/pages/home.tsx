@@ -1,9 +1,15 @@
-import Header from '@/components/public/header';
-import HeroSection from '@/components/public/hero-section';
+import Header from '@/domains/home/components/header';
+import HeroSection from '@/domains/home/components/hero-section';
+import { Price } from '@/domains/price/types';
 import { PublicLayout } from '@/layouts/public-layout';
 import { Head } from '@inertiajs/react';
 
-export default function Home() {
+type HomeProps = {
+    prices: Price[];
+};
+
+export default function Home({ prices }: HomeProps) {
+    console.log(prices);
     return (
         <>
             <Head title="G-Castle Internet Cafe">
