@@ -16,22 +16,22 @@ export default function PriceSection({ prices }: PriceSectionProps) {
         <div className="mx-auto flex w-full flex-col px-2 py-6 lg:max-w-4xl">
             <h2 className="font-arcade text-foreground text-center text-4xl font-bold tracking-wide uppercase">Prices</h2>
 
-            <div className="bg-gradient-custom flex flex-col justify-center border p-8 text-white">
+            <div className="bg-gradient-custom mx-auto mt-6 flex flex-col justify-center border p-8 text-white md:h-[950px] md:w-[750px]">
                 {/* Logo */}
                 <div className="mx-auto flex flex-col items-center">
                     <GcastleLogoIcon width={100} className="text-white" withBoxShadow />
-                    <div className="font-arcade gcastle-text-shadow mt-2 text-5xl font-extrabold tracking-wider">G CASTLE</div>
+                    <div className="font-arcade gcastle-text-shadow mt-2 text-4xl font-extrabold tracking-wider">G CASTLE</div>
                 </div>
 
                 {/* Member Pricing Header */}
-                <div className="font-arcade gcastle-text-shadow mt-4 text-center text-5xl font-extrabold tracking-wider">MEMBER PRICING</div>
+                <div className="font-arcade gcastle-text-shadow mt-4 text-center text-4xl font-extrabold tracking-wider">MEMBER PRICING</div>
 
                 {/* Membership Prices */}
                 <ol className="mt-4 space-y-0.5">
                     {memberPrices.map((price) => (
                         <li key={price.id} className="grid grid-cols-2 items-center">
                             <div className="pr-8 text-right text-2xl font-extralight">{getHoursLabel(price)}</div>
-                            <div className="font-arcade gcastle-text-shadow text-5xl font-extrabold tracking-wider">${getPriceInDollars(price)}</div>
+                            <div className="font-arcade gcastle-text-shadow text-4xl font-extrabold tracking-wider">${getPriceInDollars(price)}</div>
                         </li>
                     ))}
                 </ol>
