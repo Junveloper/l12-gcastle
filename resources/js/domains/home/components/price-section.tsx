@@ -16,7 +16,7 @@ export default function PriceSection({ prices }: PriceSectionProps) {
         <div className="mx-auto flex w-full flex-col px-2 py-6 lg:max-w-4xl">
             <h2 className="font-arcade text-foreground text-center text-4xl font-bold tracking-wide uppercase">Prices</h2>
 
-            <div className="bg-gradient-custom mx-auto mt-6 flex flex-col justify-center border p-8 text-white md:h-[950px] md:w-[750px]">
+            <div className="bg-gradient-custom mx-auto mt-6 flex flex-col justify-center p-8 text-white md:h-[850px] md:w-[600px]">
                 {/* Logo */}
                 <div className="mx-auto flex flex-col items-center">
                     <GcastleLogoIcon width={100} className="text-white" withBoxShadow />
@@ -27,11 +27,13 @@ export default function PriceSection({ prices }: PriceSectionProps) {
                 <div className="font-arcade gcastle-text-shadow mt-4 text-center text-4xl font-extrabold tracking-wider">MEMBER PRICING</div>
 
                 {/* Membership Prices */}
-                <ol className="mt-4 space-y-0.5">
+                <ol className="mt-4 flex w-full flex-col items-center justify-center space-y-0.5">
                     {memberPrices.map((price) => (
                         <li key={price.id} className="grid grid-cols-2 items-center">
-                            <div className="pr-8 text-right text-2xl font-extralight">{getHoursLabel(price)}</div>
-                            <div className="font-arcade gcastle-text-shadow text-4xl font-extrabold tracking-wider">${getPriceInDollars(price)}</div>
+                            <div className="text-right text-xl font-extralight">{getHoursLabel(price)}</div>
+                            <div className="font-arcade gcastle-text-shadow ml-8 text-3xl font-extrabold tracking-wider">
+                                ${getPriceInDollars(price)}
+                            </div>
                         </li>
                     ))}
                 </ol>
@@ -39,29 +41,29 @@ export default function PriceSection({ prices }: PriceSectionProps) {
                 {/* Pricing Structure Info */}
                 {!!membershipMinimum && (
                     <div className="flex flex-col items-center justify-center">
-                        <div className="mt-4 text-center text-sm sm:text-lg">
+                        <div className="mt-4 text-center text-base">
                             Purchasing {getHoursLabel(membershipMinimum)} with a Photo ID will get you a Membership Account
                         </div>
 
-                        <div className="mt-4 text-center font-bold sm:text-2xl">Any unused time remains on your account for 365 days</div>
+                        <div className="mt-4 text-center text-lg font-bold">Any unused time remains on your account for 365 days</div>
                     </div>
                 )}
 
                 {/* Non-Member Pricing */}
                 {!!nonMemberPrice && (
                     <div className="mt-6 flex flex-col items-center justify-center">
-                        <div className="text-2xl">NON-MEMBER PRICING</div>
-                        <div className="mt-1 text-3xl font-bold">${getPriceInDollars(nonMemberPrice)} an hour</div>
+                        <div className="text-lg">NON-MEMBER PRICING</div>
+                        <div className="mt-1 text-2xl font-bold">${getPriceInDollars(nonMemberPrice)} an hour</div>
                     </div>
                 )}
 
                 {/* Night Special Pricing */}
                 {!!nightSpecialPrice && (
                     <div className="gcastle-box-shadow mx-auto mt-6 flex flex-col items-center justify-center border-4 border-white px-14 py-3 text-center">
-                        <div className="text-2xl">MEMBER NIGHT SPECIAL</div>
-                        <div className="my-3 text-3xl">$17 for 9 hours</div>
-                        <div className="mt-2 text-sm">Only available between 10am - 2am</div>
-                        <div className="mt-1 text-sm font-bold">Remaining time will be lost</div>
+                        <div className="text-xl">MEMBER NIGHT SPECIAL</div>
+                        <div className="my-3 text-2xl">$17 for 9 hours</div>
+                        <div className="mt-2 text-xs">Only available between 10am - 2am</div>
+                        <div className="mt-1 text-xs font-bold">Remaining time will be lost</div>
                     </div>
                 )}
             </div>
