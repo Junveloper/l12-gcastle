@@ -21,8 +21,8 @@ class PriceResource extends JsonResource
             'price' => $this->price,
             'duration' => $this->duration,
             'isMembershipMinimum' => $this->is_membership_minimum,
-            'purchasableFrom' => $this->purchasable_from?->format('c'),
-            'purchasableTo' => $this->purchasable_to?->format('c'),
+            'purchasableFrom' => $this->purchasable_from?->shiftTimezone('Australia/Brisbane')->format('c'),
+            'purchasableTo' => $this->purchasable_to?->shiftTimezone('Australia/Brisbane')->format('c'),
         ];
     }
 }
