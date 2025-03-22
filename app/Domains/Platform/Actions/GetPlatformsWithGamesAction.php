@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace App\Domains\Platform\Actions;
 
 use App\Domains\Platform\Models\Platform;
+use Illuminate\Contracts\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
-use Illuminate\Database\Eloquent\Relations\HasMany;
 
 final readonly class GetPlatformsWithGamesAction
 {
@@ -14,7 +14,7 @@ final readonly class GetPlatformsWithGamesAction
     {
         return Platform::query()
             ->orderBy('display_order')
-            ->with(['games' => fn (HasMany $query) => $query->orderBy('name')])
+            ->with(['games' => fn (Builder $query) => $query->orderBy('name')])
             ->get();
     }
 }
