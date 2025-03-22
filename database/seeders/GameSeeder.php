@@ -6,6 +6,8 @@ use App\Domains\Game\Models\Game;
 use App\Domains\Platform\Models\Platform;
 use Illuminate\Database\Seeder;
 
+use function Pest\Laravel\seed;
+
 class GameSeeder extends Seeder
 {
     public function run(): void
@@ -74,6 +76,10 @@ class GameSeeder extends Seeder
                 'Spotify',
             ],
         ];
+
+        if (Platform::query()->count() === 0) {
+            seed(PlatformSeeder::class);
+        }
 
         $platforms = Platform::all()->keyBy('name');
 
