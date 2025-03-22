@@ -13,9 +13,9 @@ export default function PriceSection({ prices }: PriceSectionProps) {
 
     return (
         <div className="mx-auto flex w-full flex-col space-y-4 px-2 py-6 lg:max-w-5xl">
-            <h2 className="font-arcade text-foreground gcastle-text-shadow text-center text-5xl font-bold tracking-wide uppercase">Prices</h2>
+            <h2 className="font-arcade text-foreground gcastle-text-shadow text-center text-5xl font-bold tracking-wider uppercase">Prices</h2>
 
-            <p className="mx-auto max-w-sm px-4 text-center text-base md:max-w-xl">
+            <p className="mx-auto max-w-sm px-4 text-center text-base leading-8 md:max-w-xl">
                 We offer flexible pricing to suit everyone - from casual visitors to dedicated gamers - with
                 <span className="font-bold"> cheaper rates</span> for members.
             </p>
@@ -38,7 +38,7 @@ export default function PriceSection({ prices }: PriceSectionProps) {
 
                 {/* Pricing Structure Info */}
                 {!!membershipMinimum && (
-                    <div className="flex flex-col items-center justify-center">
+                    <div className="flex flex-col items-center justify-center tracking-wide">
                         <div className="mt-4 text-center text-xs md:text-sm">
                             Purchasing {getHoursLabel(membershipMinimum)} with a Photo ID will get you a Membership Account
                         </div>
@@ -49,7 +49,7 @@ export default function PriceSection({ prices }: PriceSectionProps) {
 
                 {/* Non-Member Pricing */}
                 {!!nonMemberPrice && (
-                    <div className="mt-6 flex flex-col items-center justify-center">
+                    <div className="mt-6 flex flex-col items-center justify-center tracking-wide">
                         <div className="text-lg">NON-MEMBER PRICING</div>
                         <div className="mt-1 text-2xl font-bold">${getPriceInDollars(nonMemberPrice)} an hour</div>
                     </div>
@@ -57,7 +57,7 @@ export default function PriceSection({ prices }: PriceSectionProps) {
 
                 {/* Night Special Pricing */}
                 {!!nightSpecialPrice && (
-                    <div className="gcastle-box-shadow mx-auto mt-6 flex flex-col items-center justify-center border-2 border-white px-14 py-3 text-center">
+                    <div className="gcastle-box-shadow mx-auto mt-6 flex flex-col items-center justify-center border-2 border-white px-14 py-3 text-center tracking-wide">
                         <div className="text-lg">MEMBER NIGHT SPECIAL</div>
                         <div className="my-3 text-xl">
                             ${getPriceInDollars(nightSpecialPrice)} for {getHoursLabel(nightSpecialPrice)}
