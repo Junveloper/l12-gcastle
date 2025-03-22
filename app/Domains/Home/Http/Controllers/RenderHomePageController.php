@@ -11,10 +11,12 @@ use Inertia\Response;
 
 final readonly class RenderHomePageController
 {
-    public function __invoke(GetPricesAction $getPrices): Response
-    {
+    public function __invoke(
+        GetPricesAction $getPrices
+    ): Response {
         return Inertia::render('home', [
             'prices' => PriceResource::collection($getPrices->execute()),
+            // 'platforms' => PlatformResource::collection($getPlatformsWithGames->execute()),
         ]);
     }
 }
