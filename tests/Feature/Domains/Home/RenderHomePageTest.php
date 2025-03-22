@@ -9,7 +9,7 @@ use Inertia\Testing\AssertableInertia;
 use function Pest\Laravel\get;
 use function Pest\Laravel\seed;
 
-it('has all required prices in the prop', function (): void {
+it('has all required props to render the home page', function (): void {
     seed(PriceSeeder::class);
 
     $expectedKeysOnPrice = [
