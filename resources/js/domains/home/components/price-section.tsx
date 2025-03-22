@@ -1,4 +1,3 @@
-import GcastleLogoIcon from '@/components/public/gcastle-logo-icon';
 import { Price } from '@/domains/price/types';
 import { getHoursLabel, getPriceInDollars, getPurchasableTimeLabel } from '@/domains/price/utils';
 
@@ -16,18 +15,12 @@ export default function PriceSection({ prices }: PriceSectionProps) {
         <div className="mx-auto flex w-full flex-col space-y-4 px-2 py-6 lg:max-w-5xl">
             <h2 className="font-arcade text-foreground gcastle-text-shadow text-center text-5xl font-bold tracking-wide uppercase">Prices</h2>
 
-            <p className="px-4 text-center text-base">
+            <p className="mx-auto max-w-sm px-4 text-center text-base md:max-w-xl">
                 We offer flexible pricing to suit everyone - from casual visitors to dedicated gamers - with
                 <span className="font-bold"> cheaper rates</span> for members.
             </p>
 
-            <div className="mx-auto mt-6 flex flex-col justify-center border p-8 text-white md:h-[850px] md:w-[600px]">
-                {/* Logo */}
-                <div className="mx-auto flex flex-col items-center">
-                    <GcastleLogoIcon width={100} className="text-white" withBoxShadow />
-                    <div className="font-arcade gcastle-text-shadow mt-2 text-4xl font-extrabold tracking-wider">G CASTLE</div>
-                </div>
-
+            <div className="mx-auto mt-2 flex flex-col justify-center text-white md:h-[650px] md:w-[550px]">
                 {/* Member Pricing Header */}
                 <div className="font-arcade gcastle-text-shadow mt-4 text-center text-4xl font-extrabold tracking-wider">MEMBER PRICING</div>
 

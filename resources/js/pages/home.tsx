@@ -20,7 +20,7 @@ export default function Home({ prices }: HomeProps) {
             <PublicLayout>
                 <Header />
                 <HeroSection />
-                <main className="mx-auto flex h-full w-full max-w-7xl flex-1 flex-col gap-4 rounded-xl">
+                <main className="mx-auto flex h-full w-full max-w-7xl flex-1 flex-col gap-4">
                     <PriceSection prices={prices} />
                 </main>
             </PublicLayout>
