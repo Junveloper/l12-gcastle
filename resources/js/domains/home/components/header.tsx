@@ -40,7 +40,7 @@ export default function Header() {
                     <Sheet>
                         <div className="flex min-w-full items-center justify-between">
                             <div className="flex items-center space-x-4 select-none">
-                                <GcastleLogoIcon width={40} className="text-black dark:text-white" />
+                                <GcastleLogoIcon width={40} />
                                 <span className="text-base font-bold">G-Castle Internet Cafe</span>
                             </div>
                             <SheetTrigger>
@@ -52,7 +52,7 @@ export default function Header() {
                         <SheetContent side="top" className="bg-sidebar flex w-full flex-col items-stretch justify-between">
                             <SheetTitle>
                                 <div className="flex items-center space-x-4 select-none">
-                                    <GcastleLogoIcon width={40} className="text-black dark:text-white" />
+                                    <GcastleLogoIcon width={40} />
                                     <span className="text-base font-bold">G-Castle Internet Cafe</span>
                                 </div>
                             </SheetTitle>
