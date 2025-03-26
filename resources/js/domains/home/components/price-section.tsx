@@ -1,5 +1,5 @@
-import { Price } from '@/domains/price/types';
-import { getHoursLabel, getPriceInDollars, getPurchasableTimeLabel } from '@/domains/price/utils';
+import { Price } from '@/domains/home/types';
+import { getHoursLabel, getPriceInDollars, getPurchasableTimeLabel } from '@/domains/home/utils';
 
 type PriceSectionProps = {
     prices: Price[];

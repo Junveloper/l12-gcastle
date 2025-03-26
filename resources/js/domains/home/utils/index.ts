@@ -1,4 +1,4 @@
-import { Price } from '@/domains/price/types';
+import { Price } from '@/domains/home/types';
 import { format } from 'date-fns';
 
 export function getDurationInHours(price: Price) {
