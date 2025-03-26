@@ -14,66 +14,216 @@ class GameSeeder extends Seeder
     {
         $gamesByPlatform = [
             'Steam' => [
-                'Apex Legends',
-                'Baldur\'s Gate 3',
-                'Cities: Skylines',
-                'Counter-Strike 2',
-                'Dark and Darker',
-                'Dead by Daylight',
-                'Destiny 2',
-                'Dota 2',
-                'EA SPORTS FC™ 24',
-                'Grand Theft Auto V',
-                'HELLDIVERS™ 2',
-                'Marvel Rivals',
-                'NARAKA: BLADEPOINT',
-                'NBA 2K23',
-                'NBA 2K24',
-                'PUBG: BATTLEGROUNDS',
-                'Paladins',
-                'Path of Exile 2',
-                'Path of Exiles',
-                'Phasmophobia',
-                'Rust',
-                'SMITE',
-                'THE FINALS',
-                'Team Fortress 2',
-                'Tom Clancy\'s Rainbow Six® Siege',
+                [
+                    'name' => 'Apex Legends',
+                    'is_free' => true,
+                ],
+                [
+                    'name' => 'Baldur\'s Gate 3',
+                    'is_free' => false,
+                ],
+                [
+                    'name' => 'Cities: Skylines',
+                    'is_free' => false,
+                ],
+                [
+                    'name' => 'Counter-Strike 2',
+                    'is_free' => true,
+                ],
+                [
+                    'name' => 'Dark and Darker',
+                    'is_free' => true,
+                ],
+                [
+                    'name' => 'Dead by Daylight',
+                    'is_free' => false,
+                ],
+                [
+                    'name' => 'Destiny 2',
+                    'is_free' => true,
+                ],
+                [
+                    'name' => 'Dota 2',
+                    'is_free' => true,
+                ],
+                [
+                    'name' => 'EA SPORTS FC™ 24',
+                    'is_free' => false,
+                ],
+                [
+                    'name' => 'Grand Theft Auto V',
+                    'is_free' => false,
+                ],
+                [
+                    'name' => 'HELLDIVERS™ 2',
+                    'is_free' => false,
+                ],
+                [
+                    'name' => 'Marvel Rivals',
+                    'is_free' => true,
+                ],
+                [
+                    'name' => 'NARAKA: BLADEPOINT',
+                    'is_free' => false,
+                ],
+                [
+                    'name' => 'NBA 2K23',
+                    'is_free' => false,
+                ],
+                [
+                    'name' => 'NBA 2K24',
+                    'is_free' => false,
+                ],
+                [
+                    'name' => 'PUBG: BATTLEGROUNDS',
+                    'is_free' => true,
+                ],
+                [
+                    'name' => 'Paladins',
+                    'is_free' => true,
+                ],
+                [
+                    'name' => 'Path of Exile 2',
+                    'is_free' => false,
+                ],
+                [
+                    'name' => 'Path of Exiles',
+                    'is_free' => true,
+                ],
+                [
+                    'name' => 'Phasmophobia',
+                    'is_free' => false,
+                ],
+                [
+                    'name' => 'Rust',
+                    'is_free' => false,
+                ],
+                [
+                    'name' => 'SMITE',
+                    'is_free' => true,
+                ],
+                [
+                    'name' => 'THE FINALS',
+                    'is_free' => true,
+                ],
+                [
+                    'name' => 'Team Fortress 2',
+                    'is_free' => true,
+                ],
+                [
+                    'name' => 'Tom Clancy\'s Rainbow Six® Siege',
+                    'is_free' => false,
+                ],
             ],
             'Riot Client' => [
-                'League of Legends',
-                'Legends of Runeterra',
-                'Valorant',
+                [
+                    'name' => 'League of Legends',
+                    'is_free' => true,
+                ],
+                [
+                    'name' => 'Legends of Runeterra',
+                    'is_free' => true,
+                ],
+                [
+                    'name' => 'Valorant',
+                    'is_free' => true,
+                ],
             ],
             'Epic Games Launcher' => [
-                'Fall Guys',
-                'Fortnite',
-                'Rocket League',
+                [
+                    'name' => 'Fall Guys',
+                    'is_free' => true,
+                ],
+                [
+                    'name' => 'Fortnite',
+                    'is_free' => true,
+                ],
+                [
+                    'name' => 'Rocket League',
+                    'is_free' => true,
+                ],
             ],
             'Battle.Net' => [
-                'Call of Duty: Modern Warfare (Warzone)',
-                'Heroes of the Storm',
-                'Overwatch 2',
-                'Starcraft',
-                'Starcraft II',
-                'World of Warcraft',
+                [
+                    'name' => 'Call of Duty: Modern Warfare (Warzone)',
+                    'is_free' => true,
+                ],
+                [
+                    'name' => 'Heroes of the Storm',
+                    'is_free' => true,
+                ],
+                [
+                    'name' => 'Overwatch 2',
+                    'is_free' => true,
+                ],
+                [
+                    'name' => 'Starcraft',
+                    'is_free' => true,
+                ],
+                [
+                    'name' => 'Starcraft II',
+                    'is_free' => true,
+                ],
+                [
+                    'name' => 'World of Warcraft',
+                    'is_free' => false,
+                ],
             ],
             'Others' => [
-                'Escape from Tarkov',
-                'Genshin Impact',
-                'Guild Wars 2',
-                'Minecraft',
-                'Roblox',
-                'RuneLite',
-                'osu!',
-                '리그오브레전드 (한국 서버)',
-                '메이플스토리',
-                '피파 온라인4',
+                [
+                    'name' => 'Escape from Tarkov',
+                    'is_free' => false,
+                ],
+                [
+                    'name' => 'Genshin Impact',
+                    'is_free' => true,
+                ],
+                [
+                    'name' => 'Guild Wars 2',
+                    'is_free' => false,
+                ],
+                [
+                    'name' => 'Minecraft',
+                    'is_free' => false,
+                ],
+                [
+                    'name' => 'Roblox',
+                    'is_free' => true,
+                ],
+                [
+                    'name' => 'RuneLite',
+                    'is_free' => true,
+                ],
+                [
+                    'name' => 'osu!',
+                    'is_free' => true,
+                ],
+                [
+                    'name' => '리그오브레전드 (한국 서버)',
+                    'is_free' => true,
+                ],
+                [
+                    'name' => '메이플스토리',
+                    'is_free' => true,
+                ],
+                [
+                    'name' => '피파 온라인4',
+                    'is_free' => true,
+                ],
             ],
             'Programs' => [
-                'Discord',
-                'LibreOffice Suite',
-                'Spotify',
+                [
+                    'name' => 'Discord',
+                    'is_free' => true,
+                ],
+                [
+                    'name' => 'LibreOffice Suite',
+                    'is_free' => true,
+                ],
+                [
+                    'name' => 'Spotify',
+                    'is_free' => false,
+                ],
             ],
         ];
 
@@ -90,11 +240,12 @@ class GameSeeder extends Seeder
                 continue;
             }
 
-            foreach ($games as $gameName) {
+            foreach ($games as $gameData) {
                 Game::factory()
                     ->forPlatform($platform)
                     ->create([
-                        'name' => $gameName,
+                        'name' => $gameData['name'],
+                        'is_free' => $gameData['is_free'],
                     ]);
             }
         }
