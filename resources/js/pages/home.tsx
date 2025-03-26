@@ -1,15 +1,17 @@
+import GameListSection from '@/domains/home/components/game-list-section';
 import Header from '@/domains/home/components/header';
 import HeroSection from '@/domains/home/components/hero-section';
 import PriceSection from '@/domains/home/components/price-section';
-import { Price } from '@/domains/price/types';
+import { GameList, Price } from '@/domains/home/types';
 import { PublicLayout } from '@/layouts/public-layout';
 import { Head } from '@inertiajs/react';
 
 type HomeProps = {
     prices: Price[];
+    gameList: GameList;
 };
 
-export default function Home({ prices }: HomeProps) {
+export default function Home({ prices, gameList }: HomeProps) {
     return (
         <>
             <Head title="G-Castle Internet Cafe">
@@ -20,8 +22,9 @@ export default function Home({ prices }: HomeProps) {
             <PublicLayout>
                 <Header />
                 <HeroSection />
-                <main className="mx-auto flex h-full w-full max-w-7xl flex-1 flex-col gap-4">
+                <main>
                     <PriceSection prices={prices} />
+                    <GameListSection gameList={gameList} />
                 </main>
             </PublicLayout>
         </>

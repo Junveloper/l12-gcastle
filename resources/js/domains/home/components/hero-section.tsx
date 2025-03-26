@@ -11,7 +11,7 @@ export default function HeroSection() {
                     </h1>
 
                     <div className="w-30">
-                        <Separator className="w-30" />
+                        <Separator className="bg-foreground/30" />
                     </div>
 
                     <div className="text-foreground max-w-md space-y-4 text-center text-base font-light">
