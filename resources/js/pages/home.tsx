@@ -22,7 +22,7 @@ export default function Home({ prices, gameList }: HomeProps) {
             <PublicLayout>
                 <Header />
                 <HeroSection />
-                <main className="mx-auto flex h-full w-full max-w-7xl flex-col">
+                <main>
                     <PriceSection prices={prices} />
                     <GameListSection gameList={gameList} />
                 </main>
