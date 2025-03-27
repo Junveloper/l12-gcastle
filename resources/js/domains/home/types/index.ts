@@ -41,3 +41,11 @@ export const gameListSchema = z.object({
     platforms: platformWithRelationsSchema.array(),
 });
 export type GameList = z.infer<typeof gameListSchema>;
+
+export const frequentlyAskedQuestionSchema = z.object({
+    id: z.string(),
+    question: z.string(),
+    answer: z.string(),
+    displayOrder: z.number(),
+});
+export type FrequentlyAskedQuestion = z.infer<typeof frequentlyAskedQuestionSchema>;
