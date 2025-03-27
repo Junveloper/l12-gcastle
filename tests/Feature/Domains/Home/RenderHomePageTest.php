@@ -48,5 +48,6 @@ it('has all required props to render the home page', function (): void {
                 'id',
                 'name',
                 'isFree',
+                'createdAt',
             ])));
 });

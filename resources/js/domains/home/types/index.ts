@@ -18,6 +18,7 @@ export const gameSchema = z.object({
     id: z.string(),
     name: z.string(),
     isFree: z.boolean(),
+    createdAt: z.coerce.date(),
 });
 export type Game = z.infer<typeof gameSchema>;
 

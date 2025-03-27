@@ -19,6 +19,7 @@ class GameResource extends JsonResource
             'id' => $this->uuid,
             'name' => $this->name,
             'isFree' => $this->is_free,
+            'createdAt' => $this->created_at,
         ];
     }
 }
