@@ -1,18 +1,20 @@
 import { Separator } from '@/components/ui/separator';
+import FrequentlyAskedQuestionsSection from '@/domains/home/components/frequently-asked-questions-section';
 import GameListSection from '@/domains/home/components/game-list-section';
 import Header from '@/domains/home/components/header';
 import HeroSection from '@/domains/home/components/hero-section';
 import PriceSection from '@/domains/home/components/price-section';
-import { GameList, Price } from '@/domains/home/types';
+import { FrequentlyAskedQuestion, GameList, Price } from '@/domains/home/types';
 import { PublicLayout } from '@/layouts/public-layout';
 import { Head } from '@inertiajs/react';
 
 type HomeProps = {
     prices: Price[];
     gameList: GameList;
+    frequentlyAskedQuestions: FrequentlyAskedQuestion[];
 };
 
-export default function Home({ prices, gameList }: HomeProps) {
+export default function Home({ prices, gameList, frequentlyAskedQuestions }: HomeProps) {
     return (
         <>
             <Head title="G-Castle Internet Cafe">
@@ -30,6 +32,7 @@ export default function Home({ prices, gameList }: HomeProps) {
                     <Separator className="bg-gcastle-pink" />
                     <GameListSection gameList={gameList} />
                     <Separator className="bg-white" />
+                    <FrequentlyAskedQuestionsSection frequentlyAskedQuestions={frequentlyAskedQuestions} />
                 </main>
             </PublicLayout>
         </>

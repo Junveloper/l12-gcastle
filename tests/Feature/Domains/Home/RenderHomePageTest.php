@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use App\Domains\FrequentlyAskedQuestion\Models\FrequentlyAskedQuestion;
 use App\Domains\Game\Models\Game;
 use App\Domains\Platform\Models\Platform;
 use App\Domains\Price\Enums\PriceType;
@@ -21,6 +22,8 @@ it('has all required props to render the home page', function (): void {
     Game::factory()
         ->forPlatform($platform)
         ->create();
+
+    FrequentlyAskedQuestion::factory()->create();
 
     get(route('home'))
         ->assertInertia(fn (AssertableInertia $page): AssertableJson => $page->component('home')
@@ -48,5 +51,13 @@ it('has all required props to render the home page', function (): void {
                 'id',
                 'name',
                 'isFree',
-            ])));
+                'createdAt',
+            ]))
+            ->has('frequentlyAskedQuestions', 1, fn (AssertableInertia $frequentlyAskedQuestionsProp): AssertableJson => $frequentlyAskedQuestionsProp->hasAll([
+                'id',
+                'question',
+                'answer',
+                'displayOrder',
+            ]))
+        );
 });

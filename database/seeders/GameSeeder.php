@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Domains\Game\Models\Game;
 use App\Domains\Platform\Models\Platform;
+use Carbon\CarbonImmutable;
 use Illuminate\Database\Seeder;
 
 use function Pest\Laravel\seed;
@@ -246,6 +247,8 @@ class GameSeeder extends Seeder
                     ->create([
                         'name' => $gameData['name'],
                         'is_free' => $gameData['is_free'],
+                        'created_at' => CarbonImmutable::parse('2025-01-01 00:00:00', 'Australia/Brisbane'),
+                        'updated_at' => CarbonImmutable::parse('2025-01-01 00:00:00', 'Australia/Brisbane'),
                     ]);
             }
         }
