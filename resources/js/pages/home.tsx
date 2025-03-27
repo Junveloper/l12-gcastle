@@ -1,3 +1,4 @@
+import { Separator } from '@/components/ui/separator';
 import GameListSection from '@/domains/home/components/game-list-section';
 import Header from '@/domains/home/components/header';
 import HeroSection from '@/domains/home/components/hero-section';
@@ -21,10 +22,14 @@ export default function Home({ prices, gameList }: HomeProps) {
             </Head>
             <PublicLayout>
                 <Header />
+                <Separator className="bg-white" />
                 <HeroSection />
+                <Separator className="bg-gcastle-blue" />
                 <main>
                     <PriceSection prices={prices} />
+                    <Separator className="bg-gcastle-pink" />
                     <GameListSection gameList={gameList} />
+                    <Separator className="bg-white" />
                 </main>
             </PublicLayout>
         </>

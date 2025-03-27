@@ -14,7 +14,7 @@ export default function GameListSection({ gameList }: GameListSectionProps) {
 
     return (
         <div className="bg-foreground/2">
-            <div className="mx-auto flex w-full flex-col space-y-4 px-2 py-6 lg:max-w-5xl">
+            <div className="mx-auto flex w-full flex-col space-y-4 px-2 py-28 lg:max-w-5xl">
                 <h2 className="font-arcade text-foreground gcastle-text-shadow text-center text-5xl font-bold tracking-wider uppercase">Game List</h2>
 
                 <p className="mx-auto max-w-sm px-4 text-center text-base leading-8 md:max-w-xl">
