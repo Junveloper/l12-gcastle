@@ -45,7 +45,7 @@ export default function GameListSection({ gameList }: GameListSectionProps) {
                 <div className="mx-auto mt-6 grid grid-cols-1 gap-16 md:grid-cols-2 md:gap-x-6 md:gap-y-10">
                     {platforms.map((platform) => (
                         <div key={platform.id} className={cn('px-6', platform.id === platformWithTheMostGames.id && 'row-span-6')}>
-                            <h3 className="text-foreground mb-6 text-center text-2xl font-black tracking-wide md:text-left">{platform.name}</h3>
+                            <h3 className="text-foreground mb-6 text-left text-2xl font-black tracking-wide md:text-left">{platform.name}</h3>
                             <ul className="space-y-2">
                                 {platform.relations.games.map((game) => (
                                     <li key={game.id} className="text-foreground flex items-center space-x-2 text-sm md:justify-start">
