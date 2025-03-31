@@ -10,4 +10,12 @@ enum BusinessKeyValueUsage: string
     case Contact = 'contact';
     case Map = 'map';
     case Address = 'address';
+
+    public function allowsMultipleRecords(): bool
+    {
+        return match ($this) {
+            self::SocialMedia, self::Contact => true,
+            self::Map, self::Address => false,
+        };
+    }
 }
