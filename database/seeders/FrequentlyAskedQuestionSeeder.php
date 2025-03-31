@@ -12,7 +12,7 @@ class FrequentlyAskedQuestionSeeder extends Seeder
         FrequentlyAskedQuestion::factory()->createMany([
             [
                 'question' => 'What is G-Castle Internet Cafe?',
-                'answer' => '<p>To be completely honest, the term "Internet Cafe" is a bit outdated. Traditional internet cafes are mostly a thing of the past. Instead, think of us as a modern-day gaming arcade - only we\'ve swapped out classic arcade machines for gaming computers.</p><p><br></p><p>It\'s simple: purchase some time, log in, fire up your favourite game, and play. Discord is great, but there\'s nothing quite like sitting next to your mates, celebrating victories, sharing laughs, grabbing food together, and experiencing epic gaming moments side by side.&nbsp;</p><p><br></p><p>At G-Castle, it\'s all about gaming, community, and having fun IRL.</p>',
+                'answer' => '<p>Think of us as a modern-day gaming arcade - only we\'ve swapped out classic arcade machines for gaming computers.</p><p><br></p><p>It\'s simple: purchase some time, log in, fire up your favourite game, and play. Discord is great, but there\'s nothing quite like sitting next to your mates, celebrating victories, sharing laughs, grabbing food together, and experiencing epic gaming moments side by side.&nbsp;</p><p><br></p><p>At G-Castle, it\'s all about gaming, community, and having fun IRL.</p>',
             ],
             [
                 'question' => 'Where are you located?',

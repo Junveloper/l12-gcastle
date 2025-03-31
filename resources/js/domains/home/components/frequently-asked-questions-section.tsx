@@ -18,7 +18,7 @@ export default function FrequentlyAskedQuestionsSection({ frequentlyAskedQuestio
             </p>
 
             <div className="px-6 md:p-0">
-                <Accordion type="multiple" className="mx-auto lg:w-3xl" defaultValue={[frequentlyAskedQuestions[0]?.id]}>
+                <Accordion type="multiple" className="mx-auto lg:w-3xl">
                     {frequentlyAskedQuestions.map((question) => (
                         <AccordionItem key={question.id} value={question.id}>
                             <AccordionTrigger className="text-lg">{question.question}</AccordionTrigger>
