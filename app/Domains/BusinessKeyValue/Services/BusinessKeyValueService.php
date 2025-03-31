@@ -26,7 +26,7 @@ final readonly class BusinessKeyValueService
         return $this->getOrCreateByUsage(BusinessKeyValueUsage::Contact);
     }
 
-    public function getMap(): BusinessKeyValue
+    public function getMapLink(): BusinessKeyValue
     {
         return $this->getOrCreateByUsage(BusinessKeyValueUsage::Map);
     }

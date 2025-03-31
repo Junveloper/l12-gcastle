@@ -18,7 +18,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $key
  * @property string $label
  * @property string $value
- * @property BusinessKeyValueUsage|null $usage
+ * @property BusinessKeyValueUsage $usage
  * @property CarbonImmutable|null $created_at
  * @property CarbonImmutable|null $updated_at
  *
