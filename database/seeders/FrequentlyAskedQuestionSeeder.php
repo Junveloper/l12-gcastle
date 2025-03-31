@@ -19,8 +19,8 @@ class FrequentlyAskedQuestionSeeder extends Seeder
                 'answer' => "<p>We're a bit of a hidden gem and don't have a distinctive street sign. Look for the \"comics etc.\" sign on 81 Elizabeth Street. We are in the basement of the same building!</p>",
             ],
             [
-                'question' => 'What is the minimum age to enter?',
-                'answer' => '<p>We don\'t have a minimum age to enter.</p>',
+                'question' => 'How old do I need to be to enter?',
+                'answer' => '<p>All ages are welcome and we don\'t have an age restriction.</p>',
             ],
             [
                 'question' => 'How much does membership cost?',

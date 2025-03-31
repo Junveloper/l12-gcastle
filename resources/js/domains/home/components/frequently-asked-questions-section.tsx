@@ -12,9 +12,10 @@ export default function FrequentlyAskedQuestionsSection({ frequentlyAskedQuestio
                 Frequently Asked Questions
             </h2>
 
-            <p className="mx-auto my-12 max-w-sm px-4 text-center text-base leading-8 md:max-w-xl">
-                Given how rare internet cafes are, you may have some questions. We've compiled a list of frequently asked questions to help you get
-                started.
+            <p className="mx-auto mt-12 max-w-sm px-4 text-center text-base leading-8 md:max-w-xl">Unfamiliar with internet cafes?</p>
+
+            <p className="mx-auto mb-12 max-w-sm px-4 text-center text-base leading-8 md:max-w-xl">
+                We've compiled a list of frequently asked questions that you may have.
             </p>
 
             <div className="px-6 md:p-0">
