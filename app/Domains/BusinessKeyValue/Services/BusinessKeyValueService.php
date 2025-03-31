@@ -4,12 +4,18 @@ declare(strict_types=1);
 
 namespace App\Domains\BusinessKeyValue\Services;
 
+use App\Domains\BusinessKeyValue\Actions\CreateBusinessKeyValueAction;
+use App\Domains\BusinessKeyValue\Data\CreateBusinessKeyValueData;
 use App\Domains\BusinessKeyValue\Enums\BusinessKeyValueUsage;
 use App\Domains\BusinessKeyValue\Models\BusinessKeyValue;
 use Illuminate\Support\Collection;
 
 final readonly class BusinessKeyValueService
 {
+    public function __construct(
+        private CreateBusinessKeyValueAction $createBusinessKeyValueAction,
+    ) {}
+
     public function getSocialMedias(): Collection
     {
         return $this->getOrCreateByUsage(BusinessKeyValueUsage::SocialMedia);
@@ -49,7 +55,7 @@ final readonly class BusinessKeyValueService
     {
         $defaultRecords = $this->getDefaultRecordsForUsage($usage);
 
-        $seededRecords = $defaultRecords->map(fn (array $record) => BusinessKeyValue::firstOrCreate($record));
+        $seededRecords = $defaultRecords->map(fn (CreateBusinessKeyValueData $data): BusinessKeyValue => $this->createBusinessKeyValueAction->execute($data));
 
         if ($usage->allowsMultipleRecords()) {
             return $seededRecords;
@@ -62,42 +68,48 @@ final readonly class BusinessKeyValueService
     {
         return collect(match ($usage) {
             BusinessKeyValueUsage::SocialMedia => [
-                [
-                    'key' => 'instagram_url',
-                    'label' => 'Instagram',
-                    'value' => 'https://www.instagram.com/gcastlebrisbane',
-                ],
-                [
-                    'key' => 'facebook_url',
-                    'label' => 'Facebook',
-                    'value' => 'https://www.facebook.com/gcastlebrisbane',
-                ],
+                new CreateBusinessKeyValueData(
+                    key: 'instagram_url',
+                    label: 'Instagram',
+                    value: 'https://www.instagram.com/gcastlebrisbane',
+                    usage: $usage,
+                ),
+                new CreateBusinessKeyValueData(
+                    key: 'facebook_url',
+                    label: 'Facebook',
+                    value: 'https://www.facebook.com/gcastlebrisbane',
+                    usage: $usage,
+                ),
             ],
             BusinessKeyValueUsage::Contact => [
-                [
-                    'key' => 'email',
-                    'label' => 'Email',
-                    'value' => 'gcastlejun@gmail.com',
-                ],
-                [
-                    'key' => 'phone',
-                    'label' => 'Phone',
-                    'value' => '0426 381 695',
-                ],
+                new CreateBusinessKeyValueData(
+                    key: 'email',
+                    label: 'Email',
+                    value: 'gcastlejun@gmail.com',
+                    usage: $usage,
+                ),
+                new CreateBusinessKeyValueData(
+                    key: 'phone',
+                    label: 'Phone',
+                    value: '0426 381 695',
+                    usage: $usage,
+                ),
             ],
             BusinessKeyValueUsage::Map => [
-                [
-                    'key' => 'google_maps_url',
-                    'label' => 'Google Maps',
-                    'value' => 'https://maps.app.goo.gl/QEC7BHCSePM76egB6',
-                ],
+                new CreateBusinessKeyValueData(
+                    key: 'google_maps_url',
+                    label: 'Google Maps',
+                    value: 'https://maps.app.goo.gl/QEC7BHCSePM76egB6',
+                    usage: $usage,
+                ),
             ],
             BusinessKeyValueUsage::Address => [
-                [
-                    'key' => 'address',
-                    'label' => 'Address',
-                    'value' => 'Basement/81 Elizabeth St, Brisbane City QLD 4000',
-                ],
+                new CreateBusinessKeyValueData(
+                    key: 'address',
+                    label: 'Address',
+                    value: 'Basement/81 Elizabeth St, Brisbane City QLD 4000',
+                    usage: $usage,
+                ),
             ],
         });
     }
