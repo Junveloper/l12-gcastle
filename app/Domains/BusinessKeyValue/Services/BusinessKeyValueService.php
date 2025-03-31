@@ -39,28 +39,28 @@ final readonly class BusinessKeyValueService
         }
 
         if ($records->isEmpty()) {
-            $defaultRecords = $this->getDefaultRecordsForUsage($usage);
-
-            foreach ($defaultRecords as $record) {
-                BusinessKeyValue::firstOrCreate(
-                    ['key' => $record['key']],
-                    [
-                        'label' => $record['label'],
-                        'value' => $record['value'],
-                        'usage' => $usage,
-                    ]
-                );
-            }
-
-            return BusinessKeyValue::where('usage', $usage)->get();
+            return $this->seedDefaultRecords($usage);
         }
 
         return $records;
     }
 
-    private function getDefaultRecordsForUsage(BusinessKeyValueUsage $usage): array
+    private function seedDefaultRecords(BusinessKeyValueUsage $usage): BusinessKeyValue|Collection
     {
-        return match ($usage) {
+        $defaultRecords = $this->getDefaultRecordsForUsage($usage);
+
+        $seededRecords = $defaultRecords->map(fn (array $record) => BusinessKeyValue::firstOrCreate($record));
+
+        if ($usage->allowsMultipleRecords()) {
+            return $seededRecords;
+        }
+
+        return $seededRecords->first();
+    }
+
+    private function getDefaultRecordsForUsage(BusinessKeyValueUsage $usage): Collection
+    {
+        return collect(match ($usage) {
             BusinessKeyValueUsage::SocialMedia => [
                 [
                     'key' => 'instagram_url',
@@ -99,6 +99,6 @@ final readonly class BusinessKeyValueService
                     'value' => 'Basement/81 Elizabeth St, Brisbane City QLD 4000',
                 ],
             ],
-        };
+        });
     }
 }
