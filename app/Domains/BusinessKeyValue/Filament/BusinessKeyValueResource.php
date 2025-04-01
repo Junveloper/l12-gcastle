@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace App\Domains\BusinessKeyValue\Filament;
 
 use App\Domains\BusinessKeyValue\Enums\BusinessKeyValueUsage;
-use App\Domains\BusinessKeyValue\Filament\BusinessKeyValueResource\CreateBusinessKeyValue;
-use App\Domains\BusinessKeyValue\Filament\BusinessKeyValueResource\EditBusinessKeyValue;
-use App\Domains\BusinessKeyValue\Filament\BusinessKeyValueResource\ListBusinessKeyValues;
+use App\Domains\BusinessKeyValue\Filament\Pages\CreateBusinessKeyValue;
+use App\Domains\BusinessKeyValue\Filament\Pages\EditBusinessKeyValue;
+use App\Domains\BusinessKeyValue\Filament\Pages\ListBusinessKeyValues;
 use App\Domains\BusinessKeyValue\Models\BusinessKeyValue;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;

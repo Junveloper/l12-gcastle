@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Domains\Game\Filament\GameResource\Pages;
+namespace App\Domains\Game\Filament\Pages;
 
 use App\Domains\Game\Filament\GameResource;
 use Filament\Resources\Pages\CreateRecord;

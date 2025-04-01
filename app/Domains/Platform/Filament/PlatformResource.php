@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace App\Domains\Platform\Filament;
 
-use App\Domains\Platform\Filament\PlatformResource\Pages\CreatePlatform;
-use App\Domains\Platform\Filament\PlatformResource\Pages\EditPlatform;
-use App\Domains\Platform\Filament\PlatformResource\Pages\ListPlatforms;
+use App\Domains\Platform\Filament\Pages\CreatePlatform;
+use App\Domains\Platform\Filament\Pages\EditPlatform;
+use App\Domains\Platform\Filament\Pages\ListPlatforms;
 use App\Domains\Platform\Models\Platform;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;

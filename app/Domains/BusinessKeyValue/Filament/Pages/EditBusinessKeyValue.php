@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Domains\BusinessKeyValue\Filament\BusinessKeyValueResource;
+namespace App\Domains\BusinessKeyValue\Filament\Pages;
 
 use App\Domains\BusinessKeyValue\Filament\BusinessKeyValueResource;
 use Filament\Actions\DeleteAction;

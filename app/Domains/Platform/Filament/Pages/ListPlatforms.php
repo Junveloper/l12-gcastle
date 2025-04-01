@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace App\Domains\Game\Filament\GameResource\Pages;
+namespace App\Domains\Platform\Filament\Pages;
 
-use App\Domains\Game\Filament\GameResource;
+use App\Domains\Platform\Filament\PlatformResource;
 use Filament\Actions\CreateAction;
 use Filament\Resources\Pages\ListRecords;
 
-class ListGames extends ListRecords
+class ListPlatforms extends ListRecords
 {
-    protected static string $resource = GameResource::class;
+    protected static string $resource = PlatformResource::class;
 
     protected function getHeaderActions(): array
     {
