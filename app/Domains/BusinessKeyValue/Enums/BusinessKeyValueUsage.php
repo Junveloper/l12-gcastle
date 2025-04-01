@@ -18,4 +18,14 @@ enum BusinessKeyValueUsage: string
             self::Map, self::Address => false,
         };
     }
+
+    public function getLabel(): string
+    {
+        return match ($this) {
+            self::SocialMedia => 'Social Media',
+            self::Contact => 'Contact',
+            self::Map => 'Map',
+            self::Address => 'Address',
+        };
+    }
 }
