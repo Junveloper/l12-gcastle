@@ -16,6 +16,7 @@ class BusinessKeyValueFactory extends Factory
             'uuid' => Str::orderedUuid(),
             'key' => $this->faker->word(),
             'value' => $this->faker->word(),
+            'label' => $this->faker->word(),
         ];
     }
 }
