@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Domains\FrequentlyAskedQuestion\Filament\FrequentlyAskedQuestionResource;
+namespace App\Domains\FrequentlyAskedQuestion\Filament\Pages;
 
 use App\Domains\FrequentlyAskedQuestion\Filament\FrequentlyAskedQuestionResource;
 use Filament\Actions\CreateAction;
