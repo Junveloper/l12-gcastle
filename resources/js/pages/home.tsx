@@ -4,7 +4,7 @@ import GameListSection from '@/domains/home/components/game-list-section';
 import Header from '@/domains/home/components/header';
 import HeroSection from '@/domains/home/components/hero-section';
 import PriceSection from '@/domains/home/components/price-section';
-import { FrequentlyAskedQuestion, GameList, Price } from '@/domains/home/types';
+import { BusinessKeyValue, FrequentlyAskedQuestion, GameList, Price } from '@/domains/home/types';
 import { PublicLayout } from '@/layouts/public-layout';
 import { Head } from '@inertiajs/react';
 
@@ -12,9 +12,10 @@ type HomeProps = {
     prices: Price[];
     gameList: GameList;
     frequentlyAskedQuestions: FrequentlyAskedQuestion[];
+    businessKeyValues: BusinessKeyValue[];
 };
 
-export default function Home({ prices, gameList, frequentlyAskedQuestions }: HomeProps) {
+export default function Home({ prices, gameList, frequentlyAskedQuestions, businessKeyValues }: HomeProps) {
     return (
         <>
             <Head title="G-Castle Internet Cafe">
@@ -33,6 +34,8 @@ export default function Home({ prices, gameList, frequentlyAskedQuestions }: Hom
                     <GameListSection gameList={gameList} />
                     <Separator className="bg-white" />
                     <FrequentlyAskedQuestionsSection frequentlyAskedQuestions={frequentlyAskedQuestions} />
+                    <Separator className="bg-gcastle-blue" />
+                    <pre>{JSON.stringify(businessKeyValues, null, 2)}</pre>
                 </main>
             </PublicLayout>
         </>

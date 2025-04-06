@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use App\Domains\BusinessKeyValue\Models\BusinessKeyValue;
 use App\Domains\FrequentlyAskedQuestion\Models\FrequentlyAskedQuestion;
 use App\Domains\Game\Models\Game;
 use App\Domains\Platform\Models\Platform;
@@ -24,6 +25,8 @@ it('has all required props to render the home page', function (): void {
         ->create();
 
     FrequentlyAskedQuestion::factory()->create();
+
+    BusinessKeyValue::factory()->count(2)->create();
 
     get(route('home'))
         ->assertInertia(fn (AssertableInertia $page): AssertableJson => $page->component('home')
@@ -58,6 +61,13 @@ it('has all required props to render the home page', function (): void {
                 'question',
                 'answer',
                 'displayOrder',
+            ]))
+            ->has('businessKeyValues', 2, fn (AssertableInertia $businessKeyValuesProp): AssertableJson => $businessKeyValuesProp->hasAll([
+                'id',
+                'usage',
+                'key',
+                'label',
+                'value',
             ]))
         );
 });

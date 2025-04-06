@@ -49,3 +49,12 @@ export const frequentlyAskedQuestionSchema = z.object({
     displayOrder: z.number(),
 });
 export type FrequentlyAskedQuestion = z.infer<typeof frequentlyAskedQuestionSchema>;
+
+export const businessKeyValueSchema = z.object({
+    id: z.string(),
+    usage: z.enum(['social_media', 'contact', 'map', 'address']),
+    key: z.string(),
+    label: z.string(),
+    value: z.string(),
+});
+export type BusinessKeyValue = z.infer<typeof businessKeyValueSchema>;
