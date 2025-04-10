@@ -1,4 +1,6 @@
 import { Separator } from '@/components/ui/separator';
+import ContactUsSection from '@/domains/home/components/contact-us-section';
+import Footer from '@/domains/home/components/footer';
 import FrequentlyAskedQuestionsSection from '@/domains/home/components/frequently-asked-questions-section';
 import GameListSection from '@/domains/home/components/game-list-section';
 import Header from '@/domains/home/components/header';
@@ -35,7 +37,9 @@ export default function Home({ prices, gameList, frequentlyAskedQuestions, busin
                     <Separator className="bg-white" />
                     <FrequentlyAskedQuestionsSection frequentlyAskedQuestions={frequentlyAskedQuestions} />
                     <Separator className="bg-gcastle-blue" />
-                    <pre>{JSON.stringify(businessKeyValues, null, 2)}</pre>
+                    <ContactUsSection businessKeyValues={businessKeyValues} />
+                    <Separator className="bg-white" />
+                    <Footer />
                 </main>
             </PublicLayout>
         </>

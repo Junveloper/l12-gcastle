@@ -50,10 +50,13 @@ export const frequentlyAskedQuestionSchema = z.object({
 });
 export type FrequentlyAskedQuestion = z.infer<typeof frequentlyAskedQuestionSchema>;
 
+export const businessKeysSchema = z.enum(['instagram_url', 'facebook_url', 'google_maps_url', 'email', 'phone', 'address']);
+export type BusinessKey = z.infer<typeof businessKeysSchema>;
+
 export const businessKeyValueSchema = z.object({
     id: z.string(),
     usage: z.enum(['social_media', 'contact', 'map', 'address']),
-    key: z.string(),
+    key: businessKeysSchema,
     label: z.string(),
     value: z.string(),
 });
