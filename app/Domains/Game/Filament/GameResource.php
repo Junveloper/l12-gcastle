@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace App\Domains\Game\Filament;
 
-use App\Domains\Game\Filament\GameResource\Pages\CreateGame;
-use App\Domains\Game\Filament\GameResource\Pages\EditGame;
-use App\Domains\Game\Filament\GameResource\Pages\ListGames;
+use App\Domains\Game\Filament\Pages\CreateGame;
+use App\Domains\Game\Filament\Pages\EditGame;
+use App\Domains\Game\Filament\Pages\ListGames;
 use App\Domains\Game\Models\Game;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;

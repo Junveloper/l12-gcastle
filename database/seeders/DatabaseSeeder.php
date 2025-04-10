@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
                 GameSeeder::class,
                 PriceSeeder::class,
                 FrequentlyAskedQuestionSeeder::class,
+                BusinessKeyValueSeeder::class,
             ]);
         });
     }

@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace App\Domains\Price\Filament;
 
 use App\Domains\Price\Enums\PriceType;
-use App\Domains\Price\Filament\PriceResource\Pages\CreatePrice;
-use App\Domains\Price\Filament\PriceResource\Pages\EditPrice;
-use App\Domains\Price\Filament\PriceResource\Pages\ListPrices;
+use App\Domains\Price\Filament\Pages\CreatePrice;
+use App\Domains\Price\Filament\Pages\EditPrice;
+use App\Domains\Price\Filament\Pages\ListPrices;
 use App\Domains\Price\Models\Price;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;

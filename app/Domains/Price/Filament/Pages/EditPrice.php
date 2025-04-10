@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Domains\Price\Filament\PriceResource\Pages;
+namespace App\Domains\Price\Filament\Pages;
 
 use App\Domains\Price\Filament\PriceResource;
 use Filament\Actions\DeleteAction;

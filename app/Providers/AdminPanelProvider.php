@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Providers;
 
+use App\Domains\BusinessKeyValue\Filament\BusinessKeyValueResource;
 use App\Domains\FrequentlyAskedQuestion\Filament\FrequentlyAskedQuestionResource;
 use App\Domains\Game\Filament\GameResource;
 use App\Domains\Platform\Filament\PlatformResource;
@@ -41,6 +42,7 @@ class AdminPanelProvider extends PanelProvider
                 GameResource::class,
                 PriceResource::class,
                 FrequentlyAskedQuestionResource::class,
+                BusinessKeyValueResource::class,
             ])
             ->pages([
                 Dashboard::class,

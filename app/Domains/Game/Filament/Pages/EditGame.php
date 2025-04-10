@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace App\Domains\Platform\Filament\PlatformResource\Pages;
+namespace App\Domains\Game\Filament\Pages;
 
-use App\Domains\Platform\Filament\PlatformResource;
+use App\Domains\Game\Filament\GameResource;
 use Filament\Actions\DeleteAction;
 use Filament\Resources\Pages\EditRecord;
 
-class EditPlatform extends EditRecord
+class EditGame extends EditRecord
 {
-    protected static string $resource = PlatformResource::class;
+    protected static string $resource = GameResource::class;
 
     protected function getHeaderActions(): array
     {

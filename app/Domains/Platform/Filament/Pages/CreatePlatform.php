@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Domains\Platform\Filament\PlatformResource\Pages;
+namespace App\Domains\Platform\Filament\Pages;
 
 use App\Domains\Platform\Filament\PlatformResource;
 use Filament\Resources\Pages\CreateRecord;

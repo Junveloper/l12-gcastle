@@ -2,20 +2,20 @@
 
 declare(strict_types=1);
 
-namespace App\Domains\Game\Filament\GameResource\Pages;
+namespace App\Domains\Game\Filament\Pages;
 
 use App\Domains\Game\Filament\GameResource;
-use Filament\Actions\DeleteAction;
-use Filament\Resources\Pages\EditRecord;
+use Filament\Actions\CreateAction;
+use Filament\Resources\Pages\ListRecords;
 
-class EditGame extends EditRecord
+class ListGames extends ListRecords
 {
     protected static string $resource = GameResource::class;
 
     protected function getHeaderActions(): array
     {
         return [
-            DeleteAction::make(),
+            CreateAction::make(),
         ];
     }
 }

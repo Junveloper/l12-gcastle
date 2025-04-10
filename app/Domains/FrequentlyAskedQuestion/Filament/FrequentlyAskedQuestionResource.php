@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace App\Domains\FrequentlyAskedQuestion\Filament;
 
-use App\Domains\FrequentlyAskedQuestion\Filament\FrequentlyAskedQuestionResource\CreateFrequentlyAskedQuestion;
-use App\Domains\FrequentlyAskedQuestion\Filament\FrequentlyAskedQuestionResource\EditFrequentlyAskedQuestion;
-use App\Domains\FrequentlyAskedQuestion\Filament\FrequentlyAskedQuestionResource\ListFrequentlyAskedQuestion;
+use App\Domains\FrequentlyAskedQuestion\Filament\Pages\CreateFrequentlyAskedQuestion;
+use App\Domains\FrequentlyAskedQuestion\Filament\Pages\EditFrequentlyAskedQuestion;
+use App\Domains\FrequentlyAskedQuestion\Filament\Pages\ListFrequentlyAskedQuestion;
 use App\Domains\FrequentlyAskedQuestion\Models\FrequentlyAskedQuestion;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\TextInput;

@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace App\Domains\Home\Http\Controllers;
 
+use App\Domains\BusinessKeyValue\Actions\GetBusinessKeyValuesAction;
+use App\Domains\BusinessKeyValue\Http\Resources\BusinessKeyValueResource;
 use App\Domains\FrequentlyAskedQuestion\Actions\GetFrequentlyAskedQuestionsAction;
 use App\Domains\FrequentlyAskedQuestion\Http\Resources\FrequentlyAskedQuestionResource;
 use App\Domains\Platform\Actions\GetPlatformsWithGamesAction;
@@ -19,11 +21,13 @@ final readonly class RenderHomePageController
         GetPricesAction $getPrices,
         GetPlatformsWithGamesAction $getGameList,
         GetFrequentlyAskedQuestionsAction $getFrequentlyAskedQuestions,
+        GetBusinessKeyValuesAction $getBusinessKeyValues,
     ): Response {
         return Inertia::render('home', [
             'prices' => PriceResource::collection($getPrices->execute()),
             'gameList' => new PlatformWithGamesResourceCollection($getGameList->execute()),
             'frequentlyAskedQuestions' => FrequentlyAskedQuestionResource::collection($getFrequentlyAskedQuestions->execute()),
+            'businessKeyValues' => BusinessKeyValueResource::collection($getBusinessKeyValues->execute()),
         ]);
     }
 }
