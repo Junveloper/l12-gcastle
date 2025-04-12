@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Domains\FrequentlyAskedQuestion\Filament\Pages;
+namespace App\Filament\Pages\FrequentlyAskedQuestion;
 
-use App\Domains\FrequentlyAskedQuestion\Filament\FrequentlyAskedQuestionResource;
+use App\Filament\Resources\FrequentlyAskedQuestionResource;
 use Filament\Resources\Pages\CreateRecord;
 
 class CreateFrequentlyAskedQuestion extends CreateRecord

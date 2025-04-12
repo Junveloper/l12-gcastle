@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Domains\BusinessKeyValue\Filament\Pages;
+namespace App\Filament\Pages\BusinessKeyValue;
 
-use App\Domains\BusinessKeyValue\Filament\BusinessKeyValueResource;
+use App\Filament\Resources\BusinessKeyValueResource;
 use Filament\Resources\Pages\CreateRecord;
 
 class CreateBusinessKeyValue extends CreateRecord

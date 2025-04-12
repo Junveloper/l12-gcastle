@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace App\Domains\FrequentlyAskedQuestion\Filament;
+namespace App\Filament\Resources;
 
-use App\Domains\FrequentlyAskedQuestion\Filament\Pages\CreateFrequentlyAskedQuestion;
-use App\Domains\FrequentlyAskedQuestion\Filament\Pages\EditFrequentlyAskedQuestion;
-use App\Domains\FrequentlyAskedQuestion\Filament\Pages\ListFrequentlyAskedQuestion;
 use App\Domains\FrequentlyAskedQuestion\Models\FrequentlyAskedQuestion;
+use App\Filament\Pages\FrequentlyAskedQuestion\CreateFrequentlyAskedQuestion;
+use App\Filament\Pages\FrequentlyAskedQuestion\EditFrequentlyAskedQuestion;
+use App\Filament\Pages\FrequentlyAskedQuestion\ListFrequentlyAskedQuestion;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;

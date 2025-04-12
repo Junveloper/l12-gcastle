@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Domains\Price\Filament\Pages;
+namespace App\Filament\Pages\Price;
 
-use App\Domains\Price\Filament\PriceResource;
+use App\Filament\Resources\PriceResource;
 use Filament\Resources\Pages\CreateRecord;
 
 class CreatePrice extends CreateRecord

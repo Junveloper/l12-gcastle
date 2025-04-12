@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace App\Domains\Game\Filament;
+namespace App\Filament\Resources;
 
-use App\Domains\Game\Filament\Pages\CreateGame;
-use App\Domains\Game\Filament\Pages\EditGame;
-use App\Domains\Game\Filament\Pages\ListGames;
 use App\Domains\Game\Models\Game;
+use App\Filament\Pages\Game\CreateGame;
+use App\Filament\Pages\Game\EditGame;
+use App\Filament\Pages\Game\ListGames;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;

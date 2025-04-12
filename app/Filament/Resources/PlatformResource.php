@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace App\Domains\Platform\Filament;
+namespace App\Filament\Resources;
 
-use App\Domains\Platform\Filament\Pages\CreatePlatform;
-use App\Domains\Platform\Filament\Pages\EditPlatform;
-use App\Domains\Platform\Filament\Pages\ListPlatforms;
 use App\Domains\Platform\Models\Platform;
+use App\Filament\Pages\Platform\CreatePlatform;
+use App\Filament\Pages\Platform\EditPlatform;
+use App\Filament\Pages\Platform\ListPlatforms;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;

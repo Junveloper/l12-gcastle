@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace App\Domains\Platform\Filament\Pages;
+namespace App\Filament\Pages\Price;
 
-use App\Domains\Platform\Filament\PlatformResource;
+use App\Filament\Resources\PriceResource;
 use Filament\Actions\CreateAction;
 use Filament\Resources\Pages\ListRecords;
 
-class ListPlatforms extends ListRecords
+class ListPrices extends ListRecords
 {
-    protected static string $resource = PlatformResource::class;
+    protected static string $resource = PriceResource::class;
 
     protected function getHeaderActions(): array
     {

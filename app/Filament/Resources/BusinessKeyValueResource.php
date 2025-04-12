@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace App\Domains\BusinessKeyValue\Filament;
+namespace App\Filament\Resources;
 
 use App\Domains\BusinessKeyValue\Enums\BusinessKeyValueUsage;
-use App\Domains\BusinessKeyValue\Filament\Pages\CreateBusinessKeyValue;
-use App\Domains\BusinessKeyValue\Filament\Pages\EditBusinessKeyValue;
-use App\Domains\BusinessKeyValue\Filament\Pages\ListBusinessKeyValues;
 use App\Domains\BusinessKeyValue\Models\BusinessKeyValue;
+use App\Filament\Pages\BusinessKeyValue\CreateBusinessKeyValue;
+use App\Filament\Pages\BusinessKeyValue\EditBusinessKeyValue;
+use App\Filament\Pages\BusinessKeyValue\ListBusinessKeyValues;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;

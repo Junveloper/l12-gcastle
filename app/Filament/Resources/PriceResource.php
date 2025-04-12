@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace App\Domains\Price\Filament;
+namespace App\Filament\Resources;
 
 use App\Domains\Price\Enums\PriceType;
-use App\Domains\Price\Filament\Pages\CreatePrice;
-use App\Domains\Price\Filament\Pages\EditPrice;
-use App\Domains\Price\Filament\Pages\ListPrices;
 use App\Domains\Price\Models\Price;
+use App\Filament\Pages\Price\CreatePrice;
+use App\Filament\Pages\Price\EditPrice;
+use App\Filament\Pages\Price\ListPrices;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
