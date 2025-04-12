@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace App\Providers;
 
-use App\Domains\BusinessKeyValue\Filament\BusinessKeyValueResource;
-use App\Domains\FrequentlyAskedQuestion\Filament\FrequentlyAskedQuestionResource;
-use App\Domains\Game\Filament\GameResource;
-use App\Domains\Platform\Filament\PlatformResource;
-use App\Domains\Price\Filament\PriceResource;
+use App\Filament\Resources\BusinessKeyValueResource;
+use App\Filament\Resources\FrequentlyAskedQuestionResource;
+use App\Filament\Resources\GameResource;
+use App\Filament\Resources\PlatformResource;
+use App\Filament\Resources\PriceResource;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;

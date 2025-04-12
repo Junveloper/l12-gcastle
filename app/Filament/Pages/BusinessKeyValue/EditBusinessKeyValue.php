@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace App\Domains\Price\Filament\Pages;
+namespace App\Filament\Pages\BusinessKeyValue;
 
-use App\Domains\Price\Filament\PriceResource;
+use App\Filament\Resources\BusinessKeyValueResource;
 use Filament\Actions\DeleteAction;
 use Filament\Resources\Pages\EditRecord;
 
-class EditPrice extends EditRecord
+class EditBusinessKeyValue extends EditRecord
 {
-    protected static string $resource = PriceResource::class;
+    protected static string $resource = BusinessKeyValueResource::class;
 
     protected function getHeaderActions(): array
     {
