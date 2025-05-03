@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
                 PriceSeeder::class,
                 FrequentlyAskedQuestionSeeder::class,
                 BusinessKeyValueSeeder::class,
+                ModalSeeder::class,
             ]);
         });
     }

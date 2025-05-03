@@ -7,6 +7,7 @@ namespace App\Providers;
 use App\Filament\Resources\BusinessKeyValueResource;
 use App\Filament\Resources\FrequentlyAskedQuestionResource;
 use App\Filament\Resources\GameResource;
+use App\Filament\Resources\ModalResource;
 use App\Filament\Resources\PlatformResource;
 use App\Filament\Resources\PriceResource;
 use Filament\Http\Middleware\Authenticate;
@@ -43,6 +44,7 @@ class AdminPanelProvider extends PanelProvider
                 PriceResource::class,
                 FrequentlyAskedQuestionResource::class,
                 BusinessKeyValueResource::class,
+                ModalResource::class,
             ])
             ->pages([
                 Dashboard::class,
