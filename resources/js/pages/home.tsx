@@ -5,19 +5,30 @@ import FrequentlyAskedQuestionsSection from '@/domains/home/components/frequentl
 import GameListSection from '@/domains/home/components/game-list-section';
 import Header from '@/domains/home/components/header';
 import HeroSection from '@/domains/home/components/hero-section';
+import ModalComponent from '@/domains/home/components/modal-component';
 import PriceSection from '@/domains/home/components/price-section';
-import { BusinessKeyValue, FrequentlyAskedQuestion, GameList, Price } from '@/domains/home/types';
+import { BusinessKeyValue, FrequentlyAskedQuestion, GameList, Modal, Price } from '@/domains/home/types';
 import { PublicLayout } from '@/layouts/public-layout';
 import { Head } from '@inertiajs/react';
+import { useEffect, useState } from 'react';
 
 type HomeProps = {
     prices: Price[];
     gameList: GameList;
     frequentlyAskedQuestions: FrequentlyAskedQuestion[];
     businessKeyValues: BusinessKeyValue[];
+    modal?: Modal;
 };
 
-export default function Home({ prices, gameList, frequentlyAskedQuestions, businessKeyValues }: HomeProps) {
+export default function Home({ prices, gameList, frequentlyAskedQuestions, businessKeyValues, modal }: HomeProps) {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    useEffect(() => {
+        if (modal) {
+            setIsModalOpen(true);
+        }
+    }, [modal]);
+
     return (
         <>
             <Head title="G-Castle Internet Cafe">
@@ -41,6 +52,7 @@ export default function Home({ prices, gameList, frequentlyAskedQuestions, busin
                     <Separator className="bg-white" />
                     <Footer />
                 </main>
+                {modal && <ModalComponent modal={modal} isOpen={isModalOpen} onOpenChange={setIsModalOpen} />}
             </PublicLayout>
         </>
     );

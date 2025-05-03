@@ -34,7 +34,7 @@ class CreateModal extends CreateRecord
                     return view('filament.modal-preview', [
                         'title' => $formData['title'] ?? 'Preview Title',
                         'content' => $formData['content'] ?? 'No content to preview yet.',
-                        'titleColor' => $formData['title_display_colour'] ?? '#30de8c',
+                        'titleColor' => $formData['title_display_colour'] ?? '#ffffff',
                     ]);
                 })
                 ->modalSubmitAction(false)

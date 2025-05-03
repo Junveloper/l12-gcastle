@@ -12,7 +12,7 @@ class ModalSeeder extends Seeder
         Modal::factory()->create([
             'title' => 'We are open 24/7',
             'content' => '<p>We are open on Labour Day (5th May)</p>',
-            'title_display_colour' => '#30de8c',
+            'title_display_colour' => '#ffffff',
             'display_from' => now(),
             'display_to' => now()->addWeeks(2),
         ]);
