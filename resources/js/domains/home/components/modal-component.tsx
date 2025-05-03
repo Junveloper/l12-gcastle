@@ -21,9 +21,11 @@ export default function ModalComponent({ modal, isOpen, onOpenChange }: ModalPro
                     <div className="text-center" dangerouslySetInnerHTML={{ __html: modal.content }} />
                 </div>
                 <DialogFooter>
-                    <Button variant="outline" onClick={() => onOpenChange(false)}>
-                        Close
-                    </Button>
+                    <div className="flex w-full justify-center">
+                        <Button className="w-full cursor-pointer md:w-1/2" variant="default" onClick={() => onOpenChange(false)}>
+                            Close
+                        </Button>
+                    </div>
                 </DialogFooter>
             </DialogContent>
         </Dialog>
