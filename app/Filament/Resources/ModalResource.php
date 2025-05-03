@@ -70,7 +70,8 @@ class ModalResource extends Resource
             TextColumn::make('display_to')
                 ->dateTime('d/m/Y H:i'),
             TextColumn::make('title'),
-            TextColumn::make('content'),
+            TextColumn::make('content')
+                ->limit(50),
         ])
             ->actions([
                 Action::make('preview')

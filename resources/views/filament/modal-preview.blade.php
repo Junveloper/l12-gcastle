@@ -4,3 +4,9 @@
         {!! $content !!}
     </div>
 </div> 
+
+<style>
+figcaption {
+    display: none;
+}
+</style>
