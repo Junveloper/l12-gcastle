@@ -17,7 +17,6 @@ class CreateModal extends CreateRecord
     protected function beforeCreate(): void
     {
         $displayFrom = CarbonImmutable::parse($this->data['display_from'], 'Australia/Brisbane');
-
         $displayTo = CarbonImmutable::parse($this->data['display_to'], 'Australia/Brisbane');
 
         $overlappingModals = app(ModalRepository::class)->getModalsDisplayingBetween(

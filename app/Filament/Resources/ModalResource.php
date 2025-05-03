@@ -40,7 +40,13 @@ class ModalResource extends Resource
                     CarbonImmutable::now()
                         ->addDays(7)
                         ->setTime(23, 59, 59)
-                ),
+                )
+                ->after('display_from')
+                ->afterOrEqual('display_from')
+                ->rules(['after:display_from'])
+                ->validationMessages([
+                    'after' => 'The display to date must be after the display from date.',
+                ]),
             TextInput::make('title')->required(),
             ColorPicker::make('title_display_colour')
                 ->required()
