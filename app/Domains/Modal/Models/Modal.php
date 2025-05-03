@@ -14,8 +14,8 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * @property int $id
  * @property string $uuid
- * @property string $display_from
- * @property string $display_to
+ * @property CarbonImmutable $display_from
+ * @property CarbonImmutable $display_to
  * @property string $title
  * @property string|null $title_display_colour
  * @property string $content
@@ -42,4 +42,9 @@ class Modal extends Model
 {
     use HasFactory;
     use HasUuid;
+
+    protected $casts = [
+        'display_from' => 'datetime',
+        'display_to' => 'datetime',
+    ];
 }
