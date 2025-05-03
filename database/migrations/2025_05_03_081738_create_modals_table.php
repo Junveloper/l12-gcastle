@@ -11,7 +11,6 @@ return new class extends Migration
         Schema::create('modals', function (Blueprint $table) {
             $table->id();
             $table->uuid('uuid')->unique();
-            $table->string('status');
             $table->dateTime('display_from');
             $table->dateTime('display_to');
             $table->string('title');
