@@ -25,9 +25,22 @@ class CreateModal extends CreateRecord
         );
 
         if ($overlappingModals->isNotEmpty()) {
-            $overlappingModals->each(function (Modal $modal) use ($displayFrom): void {
+            $endDate = $displayFrom->subSecond();
+
+            $overlappingModals->each(function (Modal $modal) use ($endDate, $displayFrom): void {
+                $modalDisplayFrom = CarbonImmutable::parse($modal->display_from, 'Australia/Brisbane');
+
+                if ($modalDisplayFrom->lt($displayFrom)) {
+                    $modal->update([
+                        'display_to' => $endDate,
+                    ]);
+
+                    return;
+                }
+
                 $modal->update([
-                    'display_to' => $displayFrom->subSecond(),
+                    'display_from' => $endDate,
+                    'display_to' => $endDate,
                 ]);
             });
         }
