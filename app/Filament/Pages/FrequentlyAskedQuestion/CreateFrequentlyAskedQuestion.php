@@ -10,4 +10,9 @@ use Filament\Resources\Pages\CreateRecord;
 class CreateFrequentlyAskedQuestion extends CreateRecord
 {
     protected static string $resource = FrequentlyAskedQuestionResource::class;
+
+    protected function getRedirectUrl(): string
+    {
+        return $this->getResource()::getUrl('index');
+    }
 }

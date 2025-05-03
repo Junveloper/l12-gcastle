@@ -51,7 +51,7 @@ class ModalResource extends Resource
             TextInput::make('title')->required(),
             ColorPicker::make('title_display_colour')
                 ->required()
-                ->default('#30de8c'),
+                ->default('#ffffff'),
             RichEditor::make('content')
                 ->required()
                 ->columnSpanFull()

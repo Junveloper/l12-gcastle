@@ -61,3 +61,13 @@ export const businessKeyValueSchema = z.object({
     value: z.string(),
 });
 export type BusinessKeyValue = z.infer<typeof businessKeyValueSchema>;
+
+export const modalSchema = z.object({
+    id: z.string(),
+    title: z.string(),
+    content: z.string(),
+    titleDisplayColour: z.string(),
+    displayFrom: z.coerce.date(),
+    displayTo: z.coerce.date(),
+});
+export type Modal = z.infer<typeof modalSchema>;

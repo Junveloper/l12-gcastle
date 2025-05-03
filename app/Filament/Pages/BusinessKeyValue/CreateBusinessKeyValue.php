@@ -10,4 +10,9 @@ use Filament\Resources\Pages\CreateRecord;
 class CreateBusinessKeyValue extends CreateRecord
 {
     protected static string $resource = BusinessKeyValueResource::class;
+
+    protected function getRedirectUrl(): string
+    {
+        return $this->getResource()::getUrl('index');
+    }
 }

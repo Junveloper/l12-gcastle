@@ -5,6 +5,7 @@ declare(strict_types=1);
 use App\Domains\BusinessKeyValue\Models\BusinessKeyValue;
 use App\Domains\FrequentlyAskedQuestion\Models\FrequentlyAskedQuestion;
 use App\Domains\Game\Models\Game;
+use App\Domains\Modal\Models\Modal;
 use App\Domains\Platform\Models\Platform;
 use App\Domains\Price\Enums\PriceType;
 use App\Domains\Price\Models\Price;
@@ -27,6 +28,8 @@ it('has all required props to render the home page', function (): void {
     FrequentlyAskedQuestion::factory()->create();
 
     BusinessKeyValue::factory()->count(2)->create();
+
+    Modal::factory()->create();
 
     get(route('home'))
         ->assertInertia(fn (AssertableInertia $page): AssertableJson => $page->component('home')
@@ -69,5 +72,34 @@ it('has all required props to render the home page', function (): void {
                 'label',
                 'value',
             ]))
+            ->has('modal', fn (AssertableInertia $modalProp): AssertableJson => $modalProp->hasAll([
+                'id',
+                'title',
+                'content',
+                'titleDisplayColour',
+                'displayFrom',
+                'displayTo',
+            ]))
+        );
+});
+
+it('does not display the modal if the User (session) has already seen it', function (): void {
+    $modal = Modal::factory()->create();
+
+    get(route('home'))
+        ->assertInertia(fn (AssertableInertia $page): AssertableJson => $page->component('home')
+            ->has('modal', fn (AssertableInertia $modalProp): AssertableJson => $modalProp->hasAll([
+                'id',
+                'title',
+                'content',
+                'titleDisplayColour',
+                'displayFrom',
+                'displayTo',
+            ]))
+        );
+
+    get(route('home'))
+        ->assertInertia(fn (AssertableInertia $page): AssertableJson => $page->component('home')
+            ->has('modal', null)
         );
 });
