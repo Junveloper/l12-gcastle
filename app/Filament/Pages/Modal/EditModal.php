@@ -56,4 +56,9 @@ class EditModal extends EditRecord
             modalBeingEdited: $editingModal,
         );
     }
+
+    protected function getRedirectUrl(): string
+    {
+        return $this->getResource()::getUrl('index');
+    }
 }

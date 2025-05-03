@@ -52,4 +52,9 @@ class CreateModal extends CreateRecord
             displayTo: $displayTo,
         );
     }
+
+    protected function getRedirectUrl(): string
+    {
+        return $this->getResource()::getUrl('index');
+    }
 }
