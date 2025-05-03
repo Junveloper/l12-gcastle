@@ -15,6 +15,7 @@ use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
+use Filament\Tables\Actions\Action;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 
@@ -70,7 +71,22 @@ class ModalResource extends Resource
                 ->dateTime('d/m/Y H:i'),
             TextColumn::make('title'),
             TextColumn::make('content'),
-        ]);
+        ])
+            ->actions([
+                Action::make('preview')
+                    ->label('Preview')
+                    ->icon('heroicon-o-eye')
+                    ->modalHeading('Modal Preview')
+                    ->modalWidth('md')
+                    ->modalAlignment('center')
+                    ->modalContent(fn (Modal $record) => view('filament.modal-preview', [
+                        'title' => $record->title,
+                        'content' => $record->content,
+                        'titleColor' => $record->title_display_colour,
+                    ]))
+                    ->modalSubmitAction(false)
+                    ->modalCancelAction(false),
+            ]);
     }
 
     public static function getRelations(): array

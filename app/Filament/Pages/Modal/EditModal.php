@@ -8,8 +8,10 @@ use App\Domains\Modal\Actions\AdjustOverlappingModalsAction;
 use App\Domains\Modal\Models\Modal;
 use App\Filament\Resources\ModalResource;
 use Carbon\CarbonImmutable;
+use Filament\Actions\Action;
 use Filament\Actions\DeleteAction;
 use Filament\Resources\Pages\EditRecord;
+use Illuminate\View\View;
 
 class EditModal extends EditRecord
 {
@@ -18,6 +20,24 @@ class EditModal extends EditRecord
     protected function getHeaderActions(): array
     {
         return [
+            Action::make('preview')
+                ->label('Preview')
+                ->icon('heroicon-o-eye')
+                ->modalHeading('Modal Preview')
+                ->modalWidth('md')
+                ->modalAlignment('center')
+                ->modalContent(function (): View {
+                    /** @var array<string, string> $formData */
+                    $formData = $this->data;
+
+                    return view('filament.modal-preview', [
+                        'title' => $formData['title'] ?? 'Preview Title',
+                        'content' => $formData['content'] ?? 'No content to preview yet.',
+                        'titleColor' => $formData['title_display_colour'] ?? '#30de8c',
+                    ]);
+                })
+                ->modalSubmitAction(false)
+                ->modalCancelAction(false),
             DeleteAction::make(),
         ];
     }
