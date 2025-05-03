@@ -5,22 +5,21 @@ declare(strict_types=1);
 use App\Domains\Modal\Exceptions\ModalException;
 use App\Domains\Modal\Models\Modal;
 use App\Domains\Modal\Repositories\ModalRepository;
-use Carbon\Carbon;
 use Carbon\CarbonImmutable;
 
 use function Pest\Laravel\travelTo;
 
 it('returns a single active modal', function (): void {
-    travelTo(Carbon::parse('2025-05-03 19:00:00', 'Australia/Brisbane'));
+    travelTo(CarbonImmutable::parse('2025-05-03 19:00:00', 'Australia/Brisbane'));
 
     $modal1 = Modal::factory()->create([
-        'display_from' => Carbon::parse('2025-04-01 00:00:00', 'Australia/Brisbane'),
-        'display_to' => Carbon::parse('2025-04-30 23:59:59', 'Australia/Brisbane'),
+        'display_from' => CarbonImmutable::parse('2025-04-01 00:00:00', 'Australia/Brisbane'),
+        'display_to' => CarbonImmutable::parse('2025-04-30 23:59:59', 'Australia/Brisbane'),
     ]);
 
     $modal2 = Modal::factory()->create([
-        'display_from' => Carbon::parse('2025-05-01 00:00:00', 'Australia/Brisbane'),
-        'display_to' => Carbon::parse('2025-05-31 23:59:59', 'Australia/Brisbane'),
+        'display_from' => CarbonImmutable::parse('2025-05-01 00:00:00', 'Australia/Brisbane'),
+        'display_to' => CarbonImmutable::parse('2025-05-31 23:59:59', 'Australia/Brisbane'),
     ]);
 
     $repository = app(ModalRepository::class);
@@ -30,16 +29,16 @@ it('returns a single active modal', function (): void {
 });
 
 it('throws ModalException when multiple active modals are found', function (): void {
-    travelTo(Carbon::parse('2025-05-03 19:00:00', 'Australia/Brisbane'));
+    travelTo(CarbonImmutable::parse('2025-05-03 19:00:00', 'Australia/Brisbane'));
 
     Modal::factory()->create([
-        'display_from' => Carbon::parse('2025-05-01 00:00:00', 'Australia/Brisbane'),
-        'display_to' => Carbon::parse('2025-05-31 23:59:59', 'Australia/Brisbane'),
+        'display_from' => CarbonImmutable::parse('2025-05-01 00:00:00', 'Australia/Brisbane'),
+        'display_to' => CarbonImmutable::parse('2025-05-31 23:59:59', 'Australia/Brisbane'),
     ]);
 
     Modal::factory()->create([
-        'display_from' => Carbon::parse('2025-05-01 00:00:00', 'Australia/Brisbane'),
-        'display_to' => Carbon::parse('2025-05-31 23:59:59', 'Australia/Brisbane'),
+        'display_from' => CarbonImmutable::parse('2025-05-01 00:00:00', 'Australia/Brisbane'),
+        'display_to' => CarbonImmutable::parse('2025-05-31 23:59:59', 'Australia/Brisbane'),
     ]);
 
     $repository = app(ModalRepository::class);
@@ -48,11 +47,11 @@ it('throws ModalException when multiple active modals are found', function (): v
 });
 
 it('returns null when no modal is active', function (): void {
-    travelTo(Carbon::parse('2025-05-03 19:00:00', 'Australia/Brisbane'));
+    travelTo(CarbonImmutable::parse('2025-05-03 19:00:00', 'Australia/Brisbane'));
 
     Modal::factory()->create([
-        'display_from' => Carbon::parse('2025-04-01 00:00:00', 'Australia/Brisbane'),
-        'display_to' => Carbon::parse('2025-04-30 23:59:59', 'Australia/Brisbane'),
+        'display_from' => CarbonImmutable::parse('2025-04-01 00:00:00', 'Australia/Brisbane'),
+        'display_to' => CarbonImmutable::parse('2025-04-30 23:59:59', 'Australia/Brisbane'),
     ]);
 
     $repository = app(ModalRepository::class);
@@ -62,13 +61,13 @@ it('returns null when no modal is active', function (): void {
 
 it('returns a collection of modals that are displaying between two dates', function (): void {
     $modal1 = Modal::factory()->create([
-        'display_from' => Carbon::parse('2025-04-01 00:00:00', 'Australia/Brisbane'),
-        'display_to' => Carbon::parse('2025-04-30 23:59:59', 'Australia/Brisbane'),
+        'display_from' => CarbonImmutable::parse('2025-04-01 00:00:00', 'Australia/Brisbane'),
+        'display_to' => CarbonImmutable::parse('2025-04-30 23:59:59', 'Australia/Brisbane'),
     ]);
 
     $modal2 = Modal::factory()->create([
-        'display_from' => Carbon::parse('2025-05-01 00:00:00', 'Australia/Brisbane'),
-        'display_to' => Carbon::parse('2025-05-31 23:59:59', 'Australia/Brisbane'),
+        'display_from' => CarbonImmutable::parse('2025-05-01 00:00:00', 'Australia/Brisbane'),
+        'display_to' => CarbonImmutable::parse('2025-05-31 23:59:59', 'Australia/Brisbane'),
     ]);
 
     $repository = app(ModalRepository::class);
@@ -93,13 +92,13 @@ it('returns a collection of modals that are displaying between two dates', funct
 
 it('returns a collection of modals that are displaying between two dates, excluding a specific modal', function (): void {
     $modal1 = Modal::factory()->create([
-        'display_from' => Carbon::parse('2025-04-01 00:00:00', 'Australia/Brisbane'),
-        'display_to' => Carbon::parse('2025-04-30 23:59:59', 'Australia/Brisbane'),
+        'display_from' => CarbonImmutable::parse('2025-04-01 00:00:00', 'Australia/Brisbane'),
+        'display_to' => CarbonImmutable::parse('2025-04-30 23:59:59', 'Australia/Brisbane'),
     ]);
 
     $modal2 = Modal::factory()->create([
-        'display_from' => Carbon::parse('2025-05-01 00:00:00', 'Australia/Brisbane'),
-        'display_to' => Carbon::parse('2025-05-31 23:59:59', 'Australia/Brisbane'),
+        'display_from' => CarbonImmutable::parse('2025-05-01 00:00:00', 'Australia/Brisbane'),
+        'display_to' => CarbonImmutable::parse('2025-05-31 23:59:59', 'Australia/Brisbane'),
     ]);
 
     $repository = app(ModalRepository::class);
