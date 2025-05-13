@@ -8,26 +8,26 @@ import {
     navigationMenuTriggerStyle,
 } from '@/components/ui/navigation-menu';
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
-import { cn } from '@/lib/utils';
+import { cn, scrollToSection } from '@/lib/utils';
 import { NavItem } from '@/types';
 import { Menu } from 'lucide-react';
 
 const mainNavItems: NavItem[] = [
     {
         title: 'Price',
-        action: () => console.log('Should Open Price'),
+        action: () => scrollToSection('price', 50),
     },
     {
         title: 'Game List',
-        action: () => console.log('Should Open Game List'),
+        action: () => scrollToSection('game-list', 50),
     },
     {
         title: 'FAQ',
-        action: () => console.log('Should Open FAQ'),
+        action: () => scrollToSection('faq', 50),
     },
     {
         title: 'Contact',
-        action: () => console.log('Should Open Contact'),
+        action: () => scrollToSection('contact', 50),
     },
 ];
 
@@ -37,7 +37,7 @@ export default function Header() {
             <div className="mx-auto flex h-16 items-center px-4 md:h-30 md:max-w-7xl md:px-12">
                 {/* Mobile Menu */}
                 <div className="w-full md:hidden">
-                    <Sheet>
+                    <Sheet modal={false}>
                         <div className="flex min-w-full items-center justify-between">
                             <div className="flex items-center space-x-4 select-none">
                                 <GcastleLogoIcon width={40} />
@@ -87,7 +87,7 @@ export default function Header() {
                 </div>
 
                 {/* Desktop Navigation */}
-                <div className="ml-16 hidden h-full items-center space-x-6 md:flex">
+                <div className="ml-auto hidden h-full items-center space-x-6 md:flex">
                     <NavigationMenu className="flex h-full items-stretch">
                         <NavigationMenuList className="flex h-full items-stretch space-x-2">
                             {mainNavItems.map((item, index) => (
