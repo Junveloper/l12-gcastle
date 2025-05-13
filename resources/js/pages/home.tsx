@@ -42,13 +42,21 @@ export default function Home({ prices, gameList, frequentlyAskedQuestions, busin
                 <HeroSection />
                 <Separator className="bg-gcastle-blue" />
                 <main>
-                    <PriceSection prices={prices} />
+                    <div id="price">
+                        <PriceSection prices={prices} />
+                    </div>
                     <Separator className="bg-gcastle-pink" />
-                    <GameListSection gameList={gameList} />
+                    <div id="game-list">
+                        <GameListSection gameList={gameList} />
+                    </div>
                     <Separator className="bg-white" />
-                    <FrequentlyAskedQuestionsSection frequentlyAskedQuestions={frequentlyAskedQuestions} />
+                    <div id="faq">
+                        <FrequentlyAskedQuestionsSection frequentlyAskedQuestions={frequentlyAskedQuestions} />
+                    </div>
                     <Separator className="bg-gcastle-blue" />
-                    <ContactUsSection businessKeyValues={businessKeyValues} />
+                    <div id="contact">
+                        <ContactUsSection businessKeyValues={businessKeyValues} />
+                    </div>
                     <Separator className="bg-white" />
                     <Footer />
                 </main>
